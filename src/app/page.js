@@ -4,6 +4,7 @@ import Button from "@/ui/components/Button";
 import SubtitleSection from "@/ui/components/SubtitleSection";
 import TitleSection from "@/ui/components/TitleSection";
 import CardMission from "@/ui/components/CardMission";
+import CardFeature from "@/ui/components/CardFeature";
 
 export default function Home() {
   return (
@@ -19,8 +20,12 @@ export default function Home() {
       <Button ghost={true}>
         Botão <Leaf />
       </Button>
-
       <CardMission
+        icon={<Heart />}
+        title="Eco-Friendly Solution"
+        description="Convert organic waste into renewable energy and nutrient-rich fertilizer, reducing landfill waste and greenhouse gas emissions."
+      />
+      <CardFeature
         icon={<Heart />}
         title="Eco-Friendly Solution"
         description="Convert organic waste into renewable energy and nutrient-rich fertilizer, reducing landfill waste and greenhouse gas emissions."
