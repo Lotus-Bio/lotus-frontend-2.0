@@ -1,8 +1,9 @@
 "use client";
-import { Leaf } from "lucide-react";
+import { Leaf, Heart } from "lucide-react";
 import Button from "@/ui/components/Button";
 import SubtitleSection from "@/ui/components/SubtitleSection";
 import TitleSection from "@/ui/components/TitleSection";
+import CardMission from "@/ui/components/CardMission";
 
 export default function Home() {
   return (
@@ -18,6 +19,12 @@ export default function Home() {
       <Button ghost={true}>
         Botão <Leaf />
       </Button>
+
+      <CardMission
+        icon={<Heart />}
+        title="Eco-Friendly Solution"
+        description="Convert organic waste into renewable energy and nutrient-rich fertilizer, reducing landfill waste and greenhouse gas emissions."
+      />
     </main>
   );
 }

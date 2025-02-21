@@ -1,0 +1,41 @@
+import styled from "styled-components";
+
+export const StyledCardMission = styled.div`
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+
+  max-width: 400px;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
+
+export const Icon = styled.div`
+  svg {
+    color: rgb(92, 156, 84);
+    width: 48px;
+    height: 48px;
+  }
+`;
+
+export const Title = styled.h4`
+  color: rgb(92, 156, 84);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+
+  text-align: center;
+`;
+
+export const Description = styled.p`
+  color: rgb(75, 85, 99);
+  font-size: 1rem;
+  line-height: inherit;
+
+  text-align: center;
+`;
