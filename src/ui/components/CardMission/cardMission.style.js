@@ -13,6 +13,12 @@ export const StyledCardMission = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 0.5rem;
+
+  transition-duration: 150ms;
+
+  &:hover {
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
 `;
 
 export const Icon = styled.div`
