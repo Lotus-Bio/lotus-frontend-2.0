@@ -5,6 +5,7 @@ import SubtitleSection from "@/ui/components/SubtitleSection";
 import TitleSection from "@/ui/components/TitleSection";
 import CardMission from "@/ui/components/CardMission";
 import CardFeature from "@/ui/components/CardFeature";
+import CardPlan from "@/ui/components/CardPlan";
 
 export default function Home() {
   return (
@@ -29,6 +30,20 @@ export default function Home() {
         icon={<Heart />}
         title="Eco-Friendly Solution"
         description="Convert organic waste into renewable energy and nutrient-rich fertilizer, reducing landfill waste and greenhouse gas emissions."
+      />
+      <CardPlan
+        title="Starter"
+        value="$2,999"
+        description="Perfect for small farms and households"
+        list={["item1", "item2", "item3", "item4", "item5", "item6"]}
+        popular={true}
+      />
+      <CardPlan
+        title="Starter"
+        value="$2,999"
+        description="Perfect for small farms and households"
+        list={["item1", "item2", "item3", "item4", "item5", "item6"]}
+        popular={false}
       />
     </main>
   );
