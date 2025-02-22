@@ -6,6 +6,7 @@ import TitleSection from "@/ui/components/TitleSection";
 import CardMission from "@/ui/components/CardMission";
 import CardFeature from "@/ui/components/CardFeature";
 import CardPlan from "@/ui/components/CardPlan";
+import Input from "@/ui/components/Input";
 
 export default function Home() {
   return (
@@ -45,6 +46,23 @@ export default function Home() {
         list={["item1", "item2", "item3", "item4", "item5", "item6"]}
         popular={false}
       />
+      <Input
+        name="name"
+        placeholder="Seu Nome"
+        // value={inputName}
+        label="Nome"
+        onChange={(e) => console.log(e.target.value)}
+      />
+      ,
+      <Input
+        name="message"
+        placeholder="Mensagem"
+        // value={inputMessage}
+        label="Sua mensagem"
+        isTextarea
+        onChange={(e) => console.log(e.target.value)}
+      />
+      ,
     </main>
   );
 }
