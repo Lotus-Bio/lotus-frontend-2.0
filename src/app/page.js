@@ -8,10 +8,15 @@ import CardFeature from "@/ui/components/CardFeature";
 import CardPlan from "@/ui/components/CardPlan";
 import Input from "@/ui/components/Input";
 import ItemContact from "@/ui/components/ItemContact";
+import Logo from "@/ui/components/Logo";
 
 export default function Home() {
   return (
     <main>
+      <div style={{ backgroundColor: "black" }}>
+        <Logo light />
+      </div>
+      <Logo large />
       <TitleSection>Revolutionizing Waste Management</TitleSection>
       <SubtitleSection>
         Our mission is to transform organic waste into sustainable energy while
