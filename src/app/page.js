@@ -9,12 +9,12 @@ import CardPlan from "@/ui/components/CardPlan";
 import Input from "@/ui/components/Input";
 import ItemContact from "@/ui/components/ItemContact";
 import Logo from "@/ui/components/Logo";
-import Menu from "@/ui/components/Menu";
+import HeaderSection from "@/ui/sections/HeaderSection";
 
 export default function Home() {
   return (
     <main>
-      <Menu />
+      <HeaderSection />
       <div style={{ backgroundColor: "black" }}>
         <Logo light />
       </div>
