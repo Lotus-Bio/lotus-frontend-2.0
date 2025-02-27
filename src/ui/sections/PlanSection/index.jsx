@@ -16,7 +16,6 @@ const PlanSection = () => {
       </div>
       <ContainerPlan>
         {plans.map((plan, index) => {
-          console.log(plan);
           return (
             <CardPlan
               key={index}
