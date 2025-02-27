@@ -10,11 +10,13 @@ import Input from "@/ui/components/Input";
 import ItemContact from "@/ui/components/ItemContact";
 import Logo from "@/ui/components/Logo";
 import HeaderSection from "@/ui/sections/HeaderSection";
+import MissionSection from "@/ui/sections/MissionSection";
 
 export default function Home() {
   return (
     <main>
       <HeaderSection />
+      <MissionSection />
       <div style={{ backgroundColor: "black" }}>
         <Logo light />
       </div>
