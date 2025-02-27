@@ -23,10 +23,6 @@ export const StyledTextarea = styled.textarea`
   ${baseInputStyles}
   height: 150px;
   resize: vertical;
-
-  &::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-  }
 `;
 
 export const Label = styled.label`
