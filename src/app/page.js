@@ -12,6 +12,7 @@ import Logo from "@/ui/components/Logo";
 import HeaderSection from "@/ui/sections/HeaderSection";
 import MissionSection from "@/ui/sections/MissionSection";
 import FeatureSection from "@/ui/sections/FeatureSection";
+import PlanSection from "@/ui/sections/PlanSection";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <HeaderSection />
       <MissionSection />
       <FeatureSection />
+      <PlanSection />
       <div style={{ backgroundColor: "black" }}>
         <Logo light />
       </div>

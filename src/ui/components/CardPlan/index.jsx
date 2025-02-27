@@ -27,7 +27,7 @@ const CardPlan = ({ title, value, description, list, popular = false }) => {
           );
         })}
       </List>
-      <Button>Get started</Button>
+      <Button ghost={!popular}>Get started</Button>
     </StyledCardPlan>
   );
 };
