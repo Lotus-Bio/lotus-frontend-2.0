@@ -8,7 +8,6 @@ export const StyledCardPlan = styled.div`
   padding: 2rem;
   max-width: 320px;
   width: 100%;
-  z-index: -1;
 `;
 
 export const IndicadoBlock = styled.div`
