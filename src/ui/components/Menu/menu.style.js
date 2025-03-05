@@ -2,7 +2,8 @@ import styled from "styled-components";
 import Container from "../Container";
 
 export const StyledMenu = styled.header`
-  background-color: rgb(3 7 18 / 0.8);
+  background-color: ${props => props.scrolled ? "rgb(3 7 18 / 0.8)" : "transparent"};  
+  transition: background-color .5s;
   backdrop-filter: blur(4px);
   width: 100vw;
 
