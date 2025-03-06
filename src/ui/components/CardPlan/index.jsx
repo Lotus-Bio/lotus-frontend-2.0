@@ -11,7 +11,19 @@ import {
   IndicadoBlock,
 } from "./cardPlan.style";
 
-const CardPlan = ({ title, value, description, list, popular = false }) => {
+const CardPlan = ({
+  title,
+  value,
+  description,
+  list,
+  popular = false,
+  message,
+  setMessage,
+}) => {
+  const handleClick = (message) => {
+    setMessage(message);
+  };
+
   return (
     <StyledCardPlan popular={popular}>
       <IndicadoBlock popular={popular}>Mais Popular</IndicadoBlock>
@@ -29,7 +41,9 @@ const CardPlan = ({ title, value, description, list, popular = false }) => {
         })}
       </List>
       <Link href="#form">
-        <Button ghost={!popular}>Saiba mais</Button>
+        <Button ghost={!popular} onClick={() => handleClick(message)}>
+          Saiba mais
+        </Button>
       </Link>
     </StyledCardPlan>
   );

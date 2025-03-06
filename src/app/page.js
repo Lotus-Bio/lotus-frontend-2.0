@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { Leaf, Heart, PhoneCall } from "lucide-react";
 import Button from "@/ui/components/Button";
 import SubtitleSection from "@/ui/components/SubtitleSection";
@@ -16,13 +17,14 @@ import PlanSection from "@/ui/sections/PlanSection";
 import FormSection from "@/ui/sections/FormSection";
 
 export default function Home() {
+  const [message, setMessage] = useState("");
   return (
     <main>
       <HeaderSection />
       <MissionSection />
       <FeatureSection />
-      <PlanSection />
-      <FormSection />
+      <PlanSection setMessage={setMessage} />
+      <FormSection message={message} setMessage={setMessage} />
     </main>
   );
 }

@@ -12,7 +12,7 @@ import ItemContact from "@/ui/components/ItemContact";
 import Button from "@/ui/components/Button";
 import Input from "@/ui/components/Input";
 
-const FormSection = () => {
+const FormSection = ({ message, setMessage }) => {
   return (
     <StyledFormSection id="form">
       <div className="container">
@@ -56,10 +56,10 @@ const FormSection = () => {
           <Input
             name="message"
             placeholder="Mensagem"
-            // value={inputMessage}
+            value={message}
             label="Sua mensagem"
             isTextarea
-            onChange={(e) => console.log(e.target.value)}
+            onChange={(e) => setMessage(e.target.value)}
           />
 
           <Button ghost={false}>Enviar mensagem</Button>

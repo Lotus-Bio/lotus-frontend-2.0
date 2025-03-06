@@ -5,7 +5,7 @@ import SubtitleSection from "@/ui/components/SubtitleSection";
 import { plans } from "@/data/plans";
 import CardPlan from "@/ui/components/CardPlan";
 
-const PlanSection = () => {
+const PlanSection = ({ setMessage }) => {
   return (
     <StyledPlanSection id="plan">
       <div className="container">
@@ -24,6 +24,8 @@ const PlanSection = () => {
               description={plan.description}
               list={plan.items}
               popular={plan.popular}
+              message={plan.message}
+              setMessage={setMessage}
             />
           );
         })}
