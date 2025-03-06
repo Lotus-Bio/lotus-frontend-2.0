@@ -10,38 +10,38 @@ import {
 export const features = [
   {
     icon: BarChart3,
-    title: "Real-time Analytics",
+    title: "Análise em tempo real",
     description:
-      "Monitor performance metrics and biogas production in real-time through our intuitive dashboard.",
+      "Monitore métricas de desempenho e produção de biogás em tempo real por meio de nosso painel intuitivo.",
   },
   {
     icon: Smartphone,
-    title: "Mobile Control",
+    title: "Controle móvel",
     description:
-      "Control and monitor your biodigester from anywhere using our mobile application.",
+      "Controle e monitore seu biodigestor de qualquer lugar usando nosso aplicativo web.",
   },
   {
     icon: Zap,
-    title: "Energy Generation",
+    title: "Geração de Biogás",
     description:
-      "Convert organic waste into biogas for sustainable energy production.",
+      "Converta resíduos orgânicos em biogás para produção de energia sustentável.",
   },
   {
     icon: Thermometer,
-    title: "Temperature Control",
+    title: "Controle de temperatura",
     description:
-      "Automated temperature regulation for optimal bacterial activity.",
+      "Regulação automatizada de temperatura para atividade bacteriana ideal.",
   },
   {
     icon: Database,
-    title: "Data Logging",
+    title: "Registro de dados",
     description:
-      "Comprehensive data storage and analysis for system optimization.",
+      "Armazenamento e análise abrangentes de dados para otimização do sistema.",
   },
   {
     icon: AlertCircle,
-    title: "Alert System",
+    title: "Sistema de Alerta",
     description:
-      "Instant notifications for system anomalies and maintenance requirements.",
+      "Notificações instantâneas para anomalias do sistema e requisitos de manutenção.",
   },
 ];

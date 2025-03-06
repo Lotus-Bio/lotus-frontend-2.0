@@ -3,20 +3,20 @@ import { Leaf, Recycle, Cpu } from "lucide-react";
 export const missions = [
   {
     icon: Leaf,
-    title: "Eco-Friendly Solution",
+    title: "Solução Ecológica",
     description:
-      "Convert organic waste into renewable energy and nutrient-rich fertilizer, reducing landfill waste and greenhouse gas emissions.",
+      "Converta resíduos orgânicos em gás e fertilizantes ricos em nutrientes, reduzindo o desperdício em aterros sanitários e as emissões de gases de efeito estufa.",
   },
   {
     icon: Recycle,
-    title: "Circular Economy",
+    title: "Economia Circular",
     description:
-      "Create a sustainable cycle of waste management that benefits both the environment and your bottom line.",
+      "Crie um ciclo sustentável de gerenciamento de resíduos que beneficie tanto o meio ambiente quanto seus resultados financeiros.",
   },
   {
     icon: Cpu,
-    title: "Smart Technology",
+    title: "Tecnologia Inteligente",
     description:
-      "Advanced Arduino integration for real-time monitoring and optimization of your biodigester system.",
+      "Integração avançada com Arduino para monitoramento e otimização em tempo real do seu sistema biodigestor.",
   },
 ];

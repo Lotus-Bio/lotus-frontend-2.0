@@ -25,21 +25,19 @@ const HeaderSection = () => {
         <ContentSection>
           <IconWrapper>
             <Leaf />
-            Sustainable Energy
+            Monitoramento de Dados
           </IconWrapper>
           <Title>
-            Transform Waste into
-            <span>Clean Energy</span>
+          Gerencie seu Biodigestor com 
+            <span>Tecnologia</span>
           </Title>
           <Description>
-            Revolutionizing waste management with smart biodigester technology.
-            Monitor and optimize your system with our integrated solution.
+          Revolucionando o gerenciamento de resíduos com tecnologia inteligente. Monitore e otimize seu sistema com nossa solução integrada.
           </Description>
           <ButtonWrapper>
             <Button>
-              Get started <ArrowRight />
+              Saiba mais <ArrowRight />
             </Button>
-            <Button ghost={true}>Learn More</Button>
           </ButtonWrapper>
         </ContentSection>
 

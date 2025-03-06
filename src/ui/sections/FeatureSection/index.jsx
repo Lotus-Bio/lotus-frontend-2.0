@@ -8,11 +8,13 @@ import CardFeature from "@/ui/components/CardFeature";
 const FeatureSection = () => {
   return (
     <StyledFeatureSection>
-      <div className="container">
-        <TitleSection>Smart Features for Smart Waste Management</TitleSection>
+      <div className="containerm">
+        <TitleSection>
+          Recursos inteligentes para gerenciamento de resíduos
+        </TitleSection>
         <SubtitleSection>
-          Our Arduino-integrated biodigester comes packed with features to
-          ensure optimal performance and ease of use.
+          Nosso sistema inteligente vem com recursos para garantir desempenho
+          ideal e facilidade de uso.
         </SubtitleSection>
       </div>
       <ContainerFeature>
