@@ -16,9 +16,10 @@ const FormSection = () => {
   return (
     <StyledFormSection id="form">
       <div className="container">
-        <TitleSection>Get in Touch</TitleSection>
+        <TitleSection>Entre em contato</TitleSection>
         <SubtitleSection>
-          Ready to transform your waste management? Contact us today.
+          Pronto para transformar sua gestão de resíduos? Entre em contato
+          conosco hoje mesmo.
         </SubtitleSection>
       </div>
       <ContainerForm>
@@ -61,7 +62,7 @@ const FormSection = () => {
             onChange={(e) => console.log(e.target.value)}
           />
 
-          <Button ghost={false}>Send Message</Button>
+          <Button ghost={false}>Enviar mensagem</Button>
         </Form>
       </ContainerForm>
     </StyledFormSection>
