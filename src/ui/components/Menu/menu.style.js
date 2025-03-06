@@ -35,6 +35,6 @@ export const NavItem = styled(Link)`
   line-height: 1.25rem;
 
   &:hover {
-    text-decoration: underline;
+    color: rgb(100, 100, 100);
   }
 `;
