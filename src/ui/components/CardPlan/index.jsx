@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import Button from "../Button";
+import Link from "next/link";
 import {
   StyledCardPlan,
   Title,
@@ -27,7 +28,9 @@ const CardPlan = ({ title, value, description, list, popular = false }) => {
           );
         })}
       </List>
-      <Button ghost={!popular}>Saiba mais</Button>
+      <Link href="#form">
+        <Button ghost={!popular}>Saiba mais</Button>
+      </Link>
     </StyledCardPlan>
   );
 };
