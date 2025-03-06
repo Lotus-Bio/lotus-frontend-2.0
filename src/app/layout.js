@@ -1,4 +1,5 @@
 import "../styles/reset.css";
+import { ToastContainer } from "react-toastify";
 
 export const metadata = {
   title: "Lotus",
@@ -9,7 +10,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
-      <body>{children}</body>
+      <body>
+        <ToastContainer />
+        {children}
+      </body>
     </html>
   );
 }

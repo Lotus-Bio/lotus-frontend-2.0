@@ -11,8 +11,31 @@ import { contacts } from "@/data/contacts";
 import ItemContact from "@/ui/components/ItemContact";
 import Button from "@/ui/components/Button";
 import Input from "@/ui/components/Input";
+import { toast } from "react-toastify";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const FormSection = ({ message, setMessage }) => {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const router = useRouter();
+  const notify = (e) => {
+    e.preventDefault();
+    toast.success("Sua mensagem foi enviado com sucesso!", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+    setEmail("");
+    setName("");
+    setMessage("");
+    router.push("#header");
+  };
   return (
     <StyledFormSection id="form">
       <div className="container">
@@ -40,17 +63,17 @@ const FormSection = ({ message, setMessage }) => {
           <Input
             name="name"
             placeholder="Seu Nome"
-            // value={inputName}
+            value={name}
             label="Nome"
-            onChange={(e) => console.log(e.target.value)}
+            onChange={(e) => setName(e.target.value)}
           />
 
           <Input
             name="email"
             placeholder="Seu E-mail"
-            // value={inputName}
+            value={email}
             label="E-mail"
-            onChange={(e) => console.log(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
           />
 
           <Input
@@ -62,7 +85,9 @@ const FormSection = ({ message, setMessage }) => {
             onChange={(e) => setMessage(e.target.value)}
           />
 
-          <Button ghost={false}>Enviar mensagem</Button>
+          <Button onClick={notify} ghost={false}>
+            Enviar mensagem
+          </Button>
         </Form>
       </ContainerForm>
     </StyledFormSection>
