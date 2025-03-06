@@ -52,6 +52,10 @@ img {
   height: auto;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   line-height: 1.5;
   background-color: #fff;
