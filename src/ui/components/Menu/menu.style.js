@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import Container from "../Container";
+import Link from "next/link";
 
 export const StyledMenu = styled.header`
-  background-color: ${props => props.scrolled ? "rgb(3 7 18 / 0.8)" : "transparent"};  
-  transition: background-color .5s;
+  background-color: ${(props) =>
+    props.scrolled ? "rgb(3 7 18 / 0.8)" : "transparent"};
+  transition: background-color 0.5s;
   backdrop-filter: blur(4px);
   width: 100vw;
 
@@ -27,7 +29,7 @@ export const Nav = styled.nav`
   gap: 2rem;
 `;
 
-export const NavItem = styled.a`
+export const NavItem = styled(Link)`
   color: rgb(209, 213, 219);
   font-size: 0.875rem;
   line-height: 1.25rem;
