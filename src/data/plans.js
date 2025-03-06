@@ -10,6 +10,8 @@ export const plans = [
       "Garantia de 1 ano",
     ],
     popular: false,
+    message:
+      "Estou interessado no Plano Iniciante e gostaria de mais informações.",
   },
   {
     title: "Profissional",
@@ -23,6 +25,8 @@ export const plans = [
       "Resolução de problemas remota",
     ],
     popular: true,
+    message:
+      "Estou interessado no Plano Profissional e gostaria de mais informações.",
   },
   {
     title: "Empresarial",
@@ -36,5 +40,7 @@ export const plans = [
       "Manutenção no local",
     ],
     popular: false,
+    message:
+      "Estou interessado no Plano Empresarial e gostaria de mais informações.",
   },
 ];
