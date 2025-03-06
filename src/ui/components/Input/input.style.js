@@ -8,7 +8,7 @@ const baseInputStyles = css`
   outline: none;
   transition: all 0.3s ease;
   width: 100%;
-  color: rgb(209, 213, 219);
+  color: rgb(0, 0, 0);
 
   &::placeholder {
     color: rgb(209, 213, 219);
