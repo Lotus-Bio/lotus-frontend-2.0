@@ -14,7 +14,7 @@ import Input from "@/ui/components/Input";
 
 const FormSection = () => {
   return (
-    <StyledFormSection>
+    <StyledFormSection id="form">
       <div className="container">
         <TitleSection>Get in Touch</TitleSection>
         <SubtitleSection>

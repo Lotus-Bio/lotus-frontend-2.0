@@ -20,7 +20,7 @@ import {
 
 const HeaderSection = () => {
   return (
-    <StyledHeaderSection>
+    <StyledHeaderSection id="header">
       <HeroContainer>
         <ContentSection>
           <IconWrapper>
@@ -28,11 +28,13 @@ const HeaderSection = () => {
             Monitoramento de Dados
           </IconWrapper>
           <Title>
-          Gerencie seu Biodigestor com 
+            Gerencie seu Biodigestor com
             <span>Tecnologia</span>
           </Title>
           <Description>
-          Revolucionando o gerenciamento de resíduos com tecnologia inteligente. Monitore e otimize seu sistema com nossa solução integrada.
+            Revolucionando o gerenciamento de resíduos com tecnologia
+            inteligente. Monitore e otimize seu sistema com nossa solução
+            integrada.
           </Description>
           <ButtonWrapper>
             <Button>

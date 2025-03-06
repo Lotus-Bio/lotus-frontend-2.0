@@ -7,8 +7,8 @@ import CardFeature from "@/ui/components/CardFeature";
 
 const FeatureSection = () => {
   return (
-    <StyledFeatureSection>
-      <div className="containerm">
+    <StyledFeatureSection id="feature">
+      <div className="container">
         <TitleSection>
           Recursos inteligentes para gerenciamento de resíduos
         </TitleSection>

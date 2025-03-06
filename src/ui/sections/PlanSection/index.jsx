@@ -7,7 +7,7 @@ import CardPlan from "@/ui/components/CardPlan";
 
 const PlanSection = () => {
   return (
-    <StyledPlanSection>
+    <StyledPlanSection id="plan">
       <div className="container">
         <TitleSection>Choose Your Plan</TitleSection>
         <SubtitleSection>

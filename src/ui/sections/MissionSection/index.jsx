@@ -7,7 +7,7 @@ import { missions } from "@/data/missions";
 
 const MissionSection = () => {
   return (
-    <StyledMissionSection>
+    <StyledMissionSection id="mission">
       <div className="container">
         <TitleSection>Revolucionando a gestão de resíduos</TitleSection>
         <SubtitleSection>
