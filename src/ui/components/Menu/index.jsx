@@ -27,10 +27,11 @@ const Menu = () => {
       <ExtendedContainer>
         <Logo light />
         <Nav>
-          <NavItem href="#">About</NavItem>
-          <NavItem href="#">Feature</NavItem>
-          <NavItem href="#">Pricing</NavItem>
-          <Button>Contact Us</Button>
+          <NavItem href="#">Sobre</NavItem>
+          <NavItem href="#">Funcionalidades</NavItem>
+          <NavItem href="#">Planos</NavItem>
+          <NavItem href="#">Contato</NavItem>
+          <Button>Entrar</Button>
         </Nav>
       </ExtendedContainer>
     </StyledMenu>
