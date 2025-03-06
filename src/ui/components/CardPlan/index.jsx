@@ -13,7 +13,7 @@ import {
 const CardPlan = ({ title, value, description, list, popular = false }) => {
   return (
     <StyledCardPlan popular={popular}>
-      <IndicadoBlock popular={popular}>Most Popular</IndicadoBlock>
+      <IndicadoBlock popular={popular}>Mais Popular</IndicadoBlock>
       <Title>{title}</Title>
       <Value>{value}</Value>
       <Description>{description}</Description>
@@ -27,7 +27,7 @@ const CardPlan = ({ title, value, description, list, popular = false }) => {
           );
         })}
       </List>
-      <Button ghost={!popular}>Get started</Button>
+      <Button ghost={!popular}>Saiba mais</Button>
     </StyledCardPlan>
   );
 };

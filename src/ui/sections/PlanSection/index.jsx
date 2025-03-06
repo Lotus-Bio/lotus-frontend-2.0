@@ -9,9 +9,9 @@ const PlanSection = () => {
   return (
     <StyledPlanSection id="plan">
       <div className="container">
-        <TitleSection>Choose Your Plan</TitleSection>
+        <TitleSection>Escolha seu plano</TitleSection>
         <SubtitleSection>
-          Select the perfect biodigester solution for your needs
+          Selecione a solução perfeita para suas necessidades
         </SubtitleSection>
       </div>
       <ContainerPlan>
