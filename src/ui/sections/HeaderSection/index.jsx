@@ -2,6 +2,7 @@
 import { Leaf, ArrowRight } from "lucide-react";
 import Button from "@/ui/components/Button";
 import Menu from "@/ui/components/Menu";
+import Link from "next/link";
 import {
   StyledHeaderSection,
   HeroContainer,
@@ -37,9 +38,11 @@ const HeaderSection = () => {
             integrada.
           </Description>
           <ButtonWrapper>
-            <Button>
-              Saiba mais <ArrowRight />
-            </Button>
+            <Link href="#mission">
+              <Button>
+                Saiba mais <ArrowRight />
+              </Button>
+            </Link>
           </ButtonWrapper>
         </ContentSection>
 
