@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Button from "../Button";
 import Logo from "../Logo";
+import Link from "next/link";
 import { StyledMenu, ExtendedContainer, Nav, NavItem } from "./menu.style";
 
 const Menu = () => {
@@ -25,12 +26,14 @@ const Menu = () => {
   return (
     <StyledMenu scrolled={scrolled}>
       <ExtendedContainer>
-        <Logo light />
+        <Link href="#header">
+          <Logo light />
+        </Link>
         <Nav>
-          <NavItem href="#">Sobre</NavItem>
-          <NavItem href="#">Funcionalidades</NavItem>
-          <NavItem href="#">Planos</NavItem>
-          <NavItem href="#">Contato</NavItem>
+          <NavItem href="#mission">Sobre</NavItem>
+          <NavItem href="#feature">Funcionalidades</NavItem>
+          <NavItem href="#plan">Planos</NavItem>
+          <NavItem href="#form">Contato</NavItem>
           <Button>Entrar</Button>
         </Nav>
       </ExtendedContainer>
