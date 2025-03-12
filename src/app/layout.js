@@ -1,6 +1,7 @@
 import "../styles/reset.css";
 import { ToastContainer } from "react-toastify";
 import StyledComponentsRegistry from "@/lib/registry";
+import Sidemenu from "@/ui/components/Sidemenu";
 
 export const metadata = {
   title: "Lotus",
@@ -12,8 +13,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
       <body>
-        <ToastContainer />
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <StyledComponentsRegistry>
+          <ToastContainer />
+
+          <div style={{ display: "flex", minHeight: "100vh" }}>
+            <Sidemenu />
+            <div style={{ flexGrow: 1, padding: "1rem" }}>{children}</div>
+          </div>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
