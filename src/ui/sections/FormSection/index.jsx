@@ -73,6 +73,7 @@ const FormSection = ({ message, setMessage }) => {
             placeholder="Seu E-mail"
             value={email}
             label="E-mail"
+            type="email"
             onChange={(e) => setEmail(e.target.value)}
           />
 

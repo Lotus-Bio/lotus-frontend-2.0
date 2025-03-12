@@ -6,6 +6,7 @@ const Input = ({
   value,
   onChange,
   isTextarea = false,
+  type = "text",
   label,
 }) => {
   const InputField = isTextarea ? StyledTextarea : StyledInput;
@@ -19,6 +20,7 @@ const Input = ({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        type={type}
       />
     </div>
   );
