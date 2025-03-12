@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
 
           <div style={{ display: "flex", minHeight: "100vh" }}>
             <Sidemenu />
-            <div style={{ flexGrow: 1, padding: "1rem" }}>{children}</div>
+            <div style={{ flexGrow: 1 }}>{children}</div>
           </div>
         </StyledComponentsRegistry>
       </body>
