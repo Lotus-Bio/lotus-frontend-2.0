@@ -1,5 +1,6 @@
 import "../styles/reset.css";
 import { ToastContainer } from "react-toastify";
+import StyledComponentsRegistry from "@/lib/registry";
 
 export const metadata = {
   title: "Lotus",
@@ -12,7 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="pt-br">
       <body>
         <ToastContainer />
-        {children}
+        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
     </html>
   );
