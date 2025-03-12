@@ -5,8 +5,11 @@ import { Container, Content, LinkLogin } from "./registerPage.style";
 import Input from "@/ui/components/Input";
 import Button from "@/ui/components/Button";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 export default function Register() {
+  const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -14,7 +17,22 @@ export default function Register() {
   function handleChange(e) {
     e.preventDefault();
 
+    toast.success(
+      "Cadastro realizado com sucesso! Bem vindo a dashboard da Lotus",
+      {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      }
+    );
+
     console.log(name, email, password);
+    router.push("/dashboard");
   }
 
   return (
