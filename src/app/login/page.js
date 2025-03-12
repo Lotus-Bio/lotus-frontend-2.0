@@ -6,6 +6,7 @@ import Input from "@/ui/components/Input";
 import Button from "@/ui/components/Button";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 export default function Login() {
   const router = useRouter();
@@ -14,6 +15,20 @@ export default function Login() {
 
   function handleChange(e) {
     e.preventDefault();
+
+    toast.success(
+      "Login realizado com sucesso! Bem vindo a dashboard da Lotus",
+      {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      }
+    );
 
     console.log(email, password);
     router.push("/dashboard");
