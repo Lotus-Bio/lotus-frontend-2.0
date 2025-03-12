@@ -5,8 +5,10 @@ import { Container, Content, LinkRegister } from "./loginPage.style";
 import Input from "@/ui/components/Input";
 import Button from "@/ui/components/Button";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -14,6 +16,7 @@ export default function Login() {
     e.preventDefault();
 
     console.log(email, password);
+    router.push("/dashboard");
   }
 
   return (
