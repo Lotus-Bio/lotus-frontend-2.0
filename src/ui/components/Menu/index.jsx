@@ -10,8 +10,10 @@ import {
   BurgerIcon,
   NavMobile,
 } from "./menu.style";
+import { useRouter } from "next/navigation";
 
 const Menu = () => {
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -57,7 +59,7 @@ const Menu = () => {
           <NavItem href="#feature">Funcionalidades</NavItem>
           <NavItem href="#plan">Planos</NavItem>
           <NavItem href="#form">Contato</NavItem>
-          <Button>Entrar</Button>
+          <Button onClick={() => router.push("/login")}>Entrar</Button>
         </Nav>
 
         {isMenuOpen && (
@@ -74,7 +76,7 @@ const Menu = () => {
             <NavItem href="#form" onClick={closeMenu}>
               Contato
             </NavItem>
-            <Button onClick={closeMenu}>Entrar</Button>
+            <Button onClick={() => router.push("/login")}>Entrar</Button>
           </NavMobile>
         )}
       </ExtendedContainer>
