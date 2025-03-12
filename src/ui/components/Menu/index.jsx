@@ -24,7 +24,7 @@ const Menu = () => {
   }, []);
 
   return (
-    <StyledMenu scrolled={scrolled}>
+    <StyledMenu $scrolled={scrolled}>
       <ExtendedContainer>
         <Link href="#header">
           <Logo light />

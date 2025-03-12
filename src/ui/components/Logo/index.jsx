@@ -3,7 +3,7 @@ import { StyledLogo } from "./logo.style";
 
 const Logo = ({ large = false, light = false }) => {
   return (
-    <StyledLogo light={light} large={large}>
+    <StyledLogo $light={light} $large={large}>
       <Leaf />
       Lotus
     </StyledLogo>

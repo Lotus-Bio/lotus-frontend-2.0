@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const StyledMenu = styled.header`
   background-color: ${(props) =>
-    props.scrolled ? "rgb(3 7 18 / 0.8)" : "transparent"};
+    props.$scrolled ? "rgb(3 7 18 / 0.8)" : "transparent"};
   transition: background-color 0.5s;
   backdrop-filter: blur(4px);
   width: 100vw;

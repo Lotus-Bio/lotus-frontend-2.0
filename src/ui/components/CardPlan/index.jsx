@@ -25,8 +25,8 @@ const CardPlan = ({
   };
 
   return (
-    <StyledCardPlan popular={popular}>
-      <IndicadoBlock popular={popular}>Mais Popular</IndicadoBlock>
+    <StyledCardPlan $popular={popular}>
+      <IndicadoBlock $popular={popular}>Mais Popular</IndicadoBlock>
       <Title>{title}</Title>
       <Value>{value}</Value>
       <Description>{description}</Description>

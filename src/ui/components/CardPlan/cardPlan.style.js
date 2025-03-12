@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const StyledCardPlan = styled.div`
   position: relative;
-  border: ${({ popular }) => (popular ? "2px solid rgb(92, 156, 84)" : "none")};
+  border: ${({ $popular }) =>
+    $popular ? "2px solid rgb(92, 156, 84)" : "none"};
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
   padding: 2rem;
@@ -11,7 +12,7 @@ export const StyledCardPlan = styled.div`
 `;
 
 export const IndicadoBlock = styled.div`
-  display: ${({ popular }) => (popular ? "block" : "none")};
+  display: ${({ $popular }) => ($popular ? "block" : "none")};
   position: absolute;
   top: -15px;
   left: 50%;
