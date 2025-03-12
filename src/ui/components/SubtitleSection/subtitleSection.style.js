@@ -8,4 +8,8 @@ export const StyledSubtitleSection = styled.h3`
   margin: 0 auto;
 
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;

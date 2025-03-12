@@ -6,6 +6,11 @@ export const StyledHeaderSection = styled.header`
   height: 100vh;
   background-image: radial-gradient(circle at center, #030712, #111827);
   display: flex;
+
+  @media (max-width: 768px) {
+    height: fit-content;
+    padding: 5rem 1rem;
+  }
 `;
 
 export const HeroContainer = styled(Container)`
@@ -52,6 +57,10 @@ export const Title = styled.h1`
     color: rgb(92, 156, 84);
     display: block;
   }
+
+  @media (max-width: 768px) {
+    font-size: 2.75rem;
+  }
 `;
 
 export const Description = styled.p`
@@ -59,6 +68,10 @@ export const Description = styled.p`
   color: rgb(209, 213, 219);
   margin-bottom: 1rem;
   line-height: 1.625;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 export const ButtonWrapper = styled.div`

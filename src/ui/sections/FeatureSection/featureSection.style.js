@@ -10,6 +10,7 @@ export const ContainerFeature = styled(Container)`
   grid-template-columns: 1fr;
   gap: 1rem;
   align-items: center;
+  justify-items: center;
 
   margin-top: 4rem;
 
