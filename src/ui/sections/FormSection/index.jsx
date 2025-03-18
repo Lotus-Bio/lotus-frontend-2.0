@@ -24,11 +24,6 @@ const FormSection = ({ message, setMessage }) => {
     toast.success("Sua mensagem foi enviado com sucesso!", {
       position: "top-center",
       autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
       theme: "dark",
     });
     setEmail("");

@@ -18,6 +18,15 @@ export default function Login() {
   async function handleChange(e) {
     e.preventDefault();
 
+    if (!email || !password) {
+      toast.error("Por favor, preencha todos os campos", {
+        position: "top-center",
+        autoClose: 5000,
+        theme: "dark",
+      });
+      return;
+    }
+
     try {
       await signInWithEmailAndPassword(auth, email, password);
       toast.success(
@@ -25,27 +34,42 @@ export default function Login() {
         {
           position: "top-center",
           autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: false,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
           theme: "dark",
         }
       );
       router.push("/dashboard");
     } catch (error) {
+      if (error.code === "auth/network-request-failed") {
+        toast.error(
+          "Ocorreu um erro de rede. Por favor, verifique sua internet e tente novamente mais tarde",
+          {
+            position: "top-center",
+            autoClose: 5000,
+            theme: "dark",
+          }
+        );
+
+        return;
+      }
+
+      if (error.code === "auth/invalid-credential") {
+        toast.error(
+          "E-mail ou senha incorretos. Verifique suas credenciais e tente novamente",
+          {
+            position: "top-center",
+            autoClose: 5000,
+            theme: "dark",
+          }
+        );
+
+        return;
+      }
+
       toast.error("Erro ao fazer login! Tente novamente mais tarde", {
         position: "top-center",
         autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
         theme: "dark",
       });
-      console.error("Erro ao logar usuário:", error);
     }
   }
 

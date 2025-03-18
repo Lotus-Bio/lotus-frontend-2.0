@@ -19,6 +19,15 @@ export default function Register() {
   async function handleChange(e) {
     e.preventDefault();
 
+    if (!name || !email || !password) {
+      toast.error("Por favor, preencha todos os campos", {
+        position: "top-center",
+        autoClose: 5000,
+        theme: "dark",
+      });
+      return;
+    }
+
     try {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
@@ -31,24 +40,37 @@ export default function Register() {
         {
           position: "top-center",
           autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: false,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
           theme: "dark",
         }
       );
       router.push("/login");
     } catch (error) {
+      if (error.code === "auth/network-request-failed") {
+        toast.error(
+          "Ocorreu um erro de rede. Por favor, verifique sua internet e tente novamente mais tarde",
+          {
+            position: "top-center",
+            autoClose: 5000,
+            theme: "dark",
+          }
+        );
+
+        return;
+      }
+
+      if (error.code === "auth/email-already-in-use") {
+        toast.error("E-mail já cadastrado. Por favor, insira outro e-mail", {
+          position: "top-center",
+          autoClose: 5000,
+          theme: "dark",
+        });
+
+        return;
+      }
+
       toast.error("Erro ao cadastrar usuário! Tente novamente mais tarde", {
         position: "top-center",
         autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
         theme: "dark",
       });
       console.error("Erro ao cadastrar usuário:", error);
