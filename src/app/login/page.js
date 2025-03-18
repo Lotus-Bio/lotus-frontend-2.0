@@ -35,7 +35,7 @@ export default function Login() {
       );
       router.push("/dashboard");
     } catch (error) {
-      toast.success("Erro ao fazer login! Tente novamente mais tarde", {
+      toast.error("Erro ao fazer login! Tente novamente mais tarde", {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
