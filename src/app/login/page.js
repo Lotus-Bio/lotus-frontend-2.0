@@ -7,18 +7,35 @@ import Button from "@/ui/components/Button";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import { auth } from "@/lib/firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 export default function Login() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function handleChange(e) {
+  async function handleChange(e) {
     e.preventDefault();
 
-    toast.success(
-      "Login realizado com sucesso! Bem vindo a dashboard da Lotus",
-      {
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      toast.success(
+        "Login realizado com sucesso! Bem vindo a dashboard da Lotus",
+        {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        }
+      );
+      router.push("/dashboard");
+    } catch (error) {
+      toast.success("Erro ao fazer login! Tente novamente mais tarde", {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -27,11 +44,9 @@ export default function Login() {
         draggable: true,
         progress: undefined,
         theme: "dark",
-      }
-    );
-
-    console.log(email, password);
-    router.push("/dashboard");
+      });
+      console.error("Erro ao logar usuário:", error);
+    }
   }
 
   return (
