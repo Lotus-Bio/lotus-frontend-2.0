@@ -2,6 +2,7 @@ import "../styles/reset.css";
 import { ToastContainer } from "react-toastify";
 import StyledComponentsRegistry from "@/lib/registry";
 import Sidemenu from "@/ui/components/Sidemenu";
+import { AuthProvider } from "@/context/AuthContext";
 
 export const metadata = {
   title: "Lotus",
@@ -14,12 +15,14 @@ export default function RootLayout({ children }) {
     <html lang="pt-br">
       <body>
         <StyledComponentsRegistry>
-          <ToastContainer />
+          <AuthProvider>
+            <ToastContainer />
 
-          <div style={{ display: "flex", minHeight: "100vh" }}>
-            <Sidemenu />
-            <div style={{ flexGrow: 1 }}>{children}</div>
-          </div>
+            <div style={{ display: "flex", minHeight: "100vh" }}>
+              <Sidemenu />
+              <div style={{ flexGrow: 1 }}>{children}</div>
+            </div>
+          </AuthProvider>
         </StyledComponentsRegistry>
       </body>
     </html>
