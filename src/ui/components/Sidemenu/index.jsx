@@ -22,8 +22,12 @@ import {
   Logout,
   StyledWrapper,
 } from "./sidemenu.style";
+import { auth } from "@/lib/firebase";
+import { signOut } from "firebase/auth";
+import { useRouter } from "next/navigation";
 
 const Sidemenu = () => {
+  const router = useRouter();
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const pathname = usePathname();
 
@@ -38,6 +42,16 @@ const Sidemenu = () => {
 
   if (!shouldRenderMenu) {
     return null;
+  }
+
+  async function handleSignOut() {
+    try {
+      await signOut(auth);
+      router.push("/login");
+      console.log("Usuário deslogado com sucesso!");
+    } catch (error) {
+      console.error("Erro ao deslogar usuário:", error);
+    }
   }
 
   return (
@@ -76,7 +90,7 @@ const Sidemenu = () => {
               />
               {!isSidebarCollapsed && <span>Recolher</span>}
             </ButtonToggle>
-            <Logout href="/login">
+            <Logout onClick={handleSignOut}>
               <LogOut />
               {!isSidebarCollapsed && <span>Sair</span>}
             </Logout>
