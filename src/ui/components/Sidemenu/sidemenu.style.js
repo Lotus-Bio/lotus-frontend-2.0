@@ -118,7 +118,7 @@ export const Content = styled.main`
   }
 `;
 
-export const Logout = styled(Link)`
+export const Logout = styled.button`
   display: flex;
   align-items: center;
   gap: 1rem;
