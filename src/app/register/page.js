@@ -7,6 +7,8 @@ import Button from "@/ui/components/Button";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import { auth } from "@/lib/firebase";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 export default function Register() {
   const router = useRouter();
@@ -14,12 +16,32 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function handleChange(e) {
+  async function handleChange(e) {
     e.preventDefault();
 
-    toast.success(
-      "Cadastro realizado com sucesso! Bem vindo a dashboard da Lotus",
-      {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      await updateProfile(userCredential.user, { displayName: name });
+      toast.success(
+        "Cadastro realizado com sucesso! Faça o login para continuar",
+        {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        }
+      );
+      router.push("/login");
+    } catch (error) {
+      toast.error("Erro ao cadastrar usuário! Tente novamente mais tarde", {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -28,11 +50,9 @@ export default function Register() {
         draggable: true,
         progress: undefined,
         theme: "dark",
-      }
-    );
-
-    console.log(name, email, password);
-    router.push("/dashboard");
+      });
+      console.error("Erro ao cadastrar usuário:", error);
+    }
   }
 
   return (
