@@ -47,10 +47,18 @@ const Sidemenu = () => {
   async function handleSignOut() {
     try {
       await signOut(auth);
+      toast.success("Usuário deslogado com sucesso", {
+        position: "top-center",
+        autoClose: 5000,
+        theme: "dark",
+      });
       router.push("/login");
-      console.log("Usuário deslogado com sucesso!");
     } catch (error) {
-      console.error("Erro ao deslogar usuário:", error);
+      toast.error("Ocorreu um erro ao deslogar o usuário", {
+        position: "top-center",
+        autoClose: 5000,
+        theme: "dark",
+      });
     }
   }
 
