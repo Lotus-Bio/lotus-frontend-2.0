@@ -4,6 +4,10 @@ export const Container = styled.div`
   padding: 2rem;
   width: 100%;
   height: 100%;
+
+  @media (max-width: 768px) {
+    padding: 1rem 0.5rem;
+  }
 `;
 
 export const Header = styled.div`
@@ -15,6 +19,13 @@ export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 `;
 
 export const Title = styled.h2`

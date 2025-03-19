@@ -11,6 +11,8 @@ export const StyledModalBlur = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  padding: 1rem;
 `;
 
 export const Container = styled.div`
@@ -21,6 +23,7 @@ export const Container = styled.div`
   background: rgba(0, 0, 0, 0.5);
   padding: 2rem;
   border-radius: 0.5rem;
+  text-align: center;
 
   h3 {
     font-size: 1.25rem;
