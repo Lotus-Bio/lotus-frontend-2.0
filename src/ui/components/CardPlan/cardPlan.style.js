@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const StyledCardPlan = styled.div`
   position: relative;
-  border: ${({ $popular }) =>
-    $popular ? "2px solid rgb(92, 156, 84)" : "none"};
+  border: ${({ $popular, theme }) =>
+    $popular ? `2px solid ${theme.colors.lightGreen}` : "none"};
+
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
   padding: 2rem;
@@ -17,7 +18,7 @@ export const IndicadoBlock = styled.div`
   top: -15px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgb(92, 156, 84);
+  background-color: ${({ theme }) => theme.colors.lightGreen};
   color: ${({ theme }) => theme.colors.white};
   padding: 0.2rem 1rem;
   border-radius: 1rem;
@@ -35,7 +36,7 @@ export const Title = styled.h4`
 `;
 
 export const Value = styled.h5`
-  color: rgb(92, 156, 84);
+  color: ${({ theme }) => theme.colors.lightGreen};
   font-size: 2.25rem;
   font-weight: 700;
   line-height: 2.5rem;

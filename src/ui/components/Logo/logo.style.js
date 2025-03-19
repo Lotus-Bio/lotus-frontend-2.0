@@ -17,6 +17,6 @@ export const StyledLogo = styled.div`
   svg {
     width: ${({ $large }) => ($large ? "1.875rem" : "24px")};
     height: ${({ $large }) => ($large ? "2.25rem" : "24px")};
-    color: rgb(92, 156, 84);
+    color: ${({ theme }) => theme.colors.lightGreen};
   }
 `;

@@ -24,14 +24,14 @@ export const StyledCardMission = styled.div`
 
 export const Icon = styled.div`
   svg {
-    color: rgb(92, 156, 84);
+    color: ${({ theme }) => theme.colors.lightGreen};
     width: 48px;
     height: 48px;
   }
 `;
 
 export const Title = styled.h4`
-  color: rgb(92, 156, 84);
+  color: ${({ theme }) => theme.colors.lightGreen};
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.75rem;

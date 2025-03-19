@@ -17,7 +17,7 @@ export const Icon = styled.div`
   align-items: center;
 
   svg {
-    color: rgb(92, 156, 84);
+    color: ${({ theme }) => theme.colors.lightGreen};
     width: 24px;
     height: 24px;
   }

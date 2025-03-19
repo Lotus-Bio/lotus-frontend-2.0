@@ -20,7 +20,7 @@ export const StyledCardFeature = styled.div`
 `;
 
 export const Icon = styled.div`
-  background: rgb(92, 156, 84);
+  background: ${({ theme }) => theme.colors.lightGreen};
   width: 48px;
   height: 48px;
   border-radius: 0.5rem;
@@ -37,7 +37,7 @@ export const Icon = styled.div`
 `;
 
 export const Title = styled.h4`
-  color: rgb(92, 156, 84);
+  color: ${({ theme }) => theme.colors.lightGreen};
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.75rem;

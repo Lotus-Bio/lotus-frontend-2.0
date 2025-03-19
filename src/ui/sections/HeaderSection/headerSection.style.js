@@ -41,7 +41,7 @@ export const IconWrapper = styled.div`
   gap: 0.5rem;
   margin-bottom: 24px;
 
-  color: rgb(92, 156, 84);
+  color: ${({ theme }) => theme.colors.lightGreen};
   font-weight: 600;
   font-size: 1rem;
 `;
@@ -54,7 +54,7 @@ export const Title = styled.h1`
   margin-bottom: 1.5rem;
 
   span {
-    color: rgb(92, 156, 84);
+    color: ${({ theme }) => theme.colors.lightGreen};
     display: block;
   }
 

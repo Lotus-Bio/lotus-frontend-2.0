@@ -3,10 +3,13 @@ import styled from "styled-components";
 export const StyledButton = styled.button`
   border-radius: 0.375rem;
   background-color: ${({ $ghost }) =>
-    $ghost ? "transparent" : "rgb(92, 156, 84)"};
+    $ghost ? "transparent" : ({ theme }) => theme.colors.lightGreen};
   color: ${({ $ghost }) =>
-    $ghost ? "rgb(92, 156, 84)" : ({ theme }) => theme.colors.white};
-  border: ${({ $ghost }) => ($ghost ? `1px solid rgb(92, 156, 84)` : "none")};
+    $ghost
+      ? ({ theme }) => theme.colors.lightGreen
+      : ({ theme }) => theme.colors.white};
+  border: ${({ $ghost }) =>
+    $ghost ? `1px solid ${({ theme }) => theme.colors.lightGreen}` : "none"};
   padding: 12px 24px;
   font-size: 14px;
   line-height: 1.25rem;
@@ -26,7 +29,7 @@ export const StyledButton = styled.button`
 
   &:hover {
     background-color: ${({ $ghost }) =>
-      $ghost ? "rgb(92, 156, 84)" : "rgb(68, 132, 60)"};
+      $ghost ? ({ theme }) => theme.colors.lightGreen : "rgb(68, 132, 60)"};
     color: ${({ theme }) => theme.colors.white};
     border: ${({ $ghost }) => ($ghost ? `1px solid rgb(68, 132, 60)` : "none")};
     transition: all 0.3s ease;

@@ -42,7 +42,7 @@ export const LinkRegister = styled.div`
   gap: 0.5rem;
 
   a {
-    color: rgb(92, 156, 84);
+    color: ${({ theme }) => theme.colors.lightGreen};
     font-size: 1rem;
     font-weight: 600;
   }
