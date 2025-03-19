@@ -18,7 +18,13 @@ export default function RootLayout({ children }) {
           <AuthProvider>
             <ToastContainer />
 
-            <div style={{ display: "flex", minHeight: "100vh" }}>
+            <div
+              style={{
+                display: "flex",
+                minHeight: "100vh",
+                background: "rgb(249, 250, 251)",
+              }}
+            >
               <Sidemenu />
               <div style={{ flexGrow: 1 }}>{children}</div>
             </div>
