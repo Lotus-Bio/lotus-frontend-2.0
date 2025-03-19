@@ -23,6 +23,7 @@ import Input from "@/ui/components/Input";
 import Button from "@/ui/components/Button";
 import { toast } from "react-toastify";
 import Loading from "@/ui/components/Loading";
+import ProtectedRoute from "@/routes/protectedRoute";
 
 export default function Profile() {
   const { user } = useAuth();
@@ -159,35 +160,36 @@ export default function Profile() {
   };
 
   return (
-    <Container>
-      <Loading loading={loading} />
-      <Header>
-        <div>
-          <Title>Perfil</Title>
-          <Description>
-            Gerencie suas informações pessoais e configurações de conta.
-          </Description>
-        </div>
+    <ProtectedRoute>
+      <Container>
+        <Loading loading={loading} />
+        <Header>
+          <div>
+            <Title>Perfil</Title>
+            <Description>
+              Gerencie suas informações pessoais e configurações de conta.
+            </Description>
+          </div>
 
-        <Tag>Sistema ativo</Tag>
-      </Header>
+          <Tag>Sistema ativo</Tag>
+        </Header>
 
-      <Form>
-        <BlockInput>
-          <TitleBlockInput>Editar nome</TitleBlockInput>
-          <Input
-            name="name"
-            placeholder="Seu Nome"
-            value={displayName}
-            label="Nome:"
-            onChange={(e) => setDisplayName(e.target.value)}
-          />
-          <Button onClick={handleUpdateName} ghost={false}>
-            Salvar Nome
-          </Button>
-        </BlockInput>
+        <Form>
+          <BlockInput>
+            <TitleBlockInput>Editar nome</TitleBlockInput>
+            <Input
+              name="name"
+              placeholder="Seu Nome"
+              value={displayName}
+              label="Nome:"
+              onChange={(e) => setDisplayName(e.target.value)}
+            />
+            <Button onClick={handleUpdateName} ghost={false}>
+              Salvar Nome
+            </Button>
+          </BlockInput>
 
-        {/* <BlockInput>
+          {/* <BlockInput>
           <TitleBlockInput>Editar e-mail</TitleBlockInput>
 
           <Input
@@ -212,31 +214,32 @@ export default function Profile() {
           </Button>
         </BlockInput> */}
 
-        <BlockInput>
-          <TitleBlockInput>Editar senha</TitleBlockInput>
+          <BlockInput>
+            <TitleBlockInput>Editar senha</TitleBlockInput>
 
-          <Input
-            name="currentPassword2"
-            placeholder="Sua senha"
-            value={currentPassword}
-            label="Senha atual:"
-            type="password"
-            onChange={(e) => setCurrentPassword(e.target.value)}
-          />
+            <Input
+              name="currentPassword2"
+              placeholder="Sua senha"
+              value={currentPassword}
+              label="Senha atual:"
+              type="password"
+              onChange={(e) => setCurrentPassword(e.target.value)}
+            />
 
-          <Input
-            name="newPassword"
-            placeholder="Sua senha"
-            value={newPassword}
-            label="Nova senha:"
-            type="password"
-            onChange={(e) => setNewPassword(e.target.value)}
-          />
-          <Button onClick={handleUpdatePassword} ghost={false}>
-            Salvar Senha
-          </Button>
-        </BlockInput>
-      </Form>
-    </Container>
+            <Input
+              name="newPassword"
+              placeholder="Sua senha"
+              value={newPassword}
+              label="Nova senha:"
+              type="password"
+              onChange={(e) => setNewPassword(e.target.value)}
+            />
+            <Button onClick={handleUpdatePassword} ghost={false}>
+              Salvar Senha
+            </Button>
+          </BlockInput>
+        </Form>
+      </Container>
+    </ProtectedRoute>
   );
 }

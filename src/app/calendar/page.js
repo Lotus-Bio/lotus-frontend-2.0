@@ -11,12 +11,13 @@ import {
   Tag,
 } from "./calendarPage.style";
 import ModalBlur from "@/ui/components/ModalBlur";
+import ProtectedRoute from "@/routes/protectedRoute";
 
 export default function Calendar() {
   return (
-    <>
-      <ModalBlur />
+    <ProtectedRoute>
       <Container>
+        <ModalBlur />
         <Header>
           <div>
             <Title>Calendário</Title>
@@ -36,6 +37,6 @@ export default function Calendar() {
           locale={ptLocale}
         />
       </Container>
-    </>
+    </ProtectedRoute>
   );
 }

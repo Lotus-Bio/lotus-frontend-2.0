@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 import { auth } from "@/lib/firebase";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import Loading from "@/ui/components/Loading";
+import PublicRoute from "@/routes/publicRoutes";
 
 export default function Register() {
   const router = useRouter();
@@ -83,51 +84,53 @@ export default function Register() {
   }
 
   return (
-    <Container>
-      <Loading loading={loading} />
+    <PublicRoute>
+      <Container>
+        <Loading loading={loading} />
 
-      <Content>
-        <Logo large />
+        <Content>
+          <Logo large />
 
-        <h2>Cadastrar</h2>
+          <h2>Cadastrar</h2>
 
-        <form>
-          <Input
-            name="name"
-            placeholder="Seu Nome"
-            value={name}
-            label="Nome completo"
-            onChange={(e) => setName(e.target.value)}
-          />
+          <form>
+            <Input
+              name="name"
+              placeholder="Seu Nome"
+              value={name}
+              label="Nome completo"
+              onChange={(e) => setName(e.target.value)}
+            />
 
-          <Input
-            name="email"
-            placeholder="Seu E-mail"
-            value={email}
-            label="E-mail"
-            type="email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
+            <Input
+              name="email"
+              placeholder="Seu E-mail"
+              value={email}
+              label="E-mail"
+              type="email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
 
-          <Input
-            name="password"
-            placeholder="Senha"
-            value={password}
-            label="Insira sua senha"
-            type="password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
+            <Input
+              name="password"
+              placeholder="Senha"
+              value={password}
+              label="Insira sua senha"
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
 
-          <Button onClick={handleChange} ghost={false}>
-            Cadastrar
-          </Button>
-        </form>
+            <Button onClick={handleChange} ghost={false}>
+              Cadastrar
+            </Button>
+          </form>
 
-        <LinkLogin>
-          <p>Já tem uma conta?</p>
-          <Link href="/login">Entrar</Link>
-        </LinkLogin>
-      </Content>
-    </Container>
+          <LinkLogin>
+            <p>Já tem uma conta?</p>
+            <Link href="/login">Entrar</Link>
+          </LinkLogin>
+        </Content>
+      </Container>
+    </PublicRoute>
   );
 }

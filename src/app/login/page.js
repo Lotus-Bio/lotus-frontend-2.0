@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 import { auth } from "@/lib/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import Loading from "@/ui/components/Loading";
+import PublicRoute from "@/routes/publicRoutes";
 
 export default function Login() {
   const router = useRouter();
@@ -82,43 +83,45 @@ export default function Login() {
   }
 
   return (
-    <Container>
-      <Loading loading={loading} />
+    <PublicRoute>
+      <Container>
+        <Loading loading={loading} />
 
-      <Content>
-        <Logo large />
+        <Content>
+          <Logo large />
 
-        <h2>Entrar</h2>
+          <h2>Entrar</h2>
 
-        <form>
-          <Input
-            name="email"
-            placeholder="Seu E-mail"
-            value={email}
-            label="E-mail"
-            type="email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
+          <form>
+            <Input
+              name="email"
+              placeholder="Seu E-mail"
+              value={email}
+              label="E-mail"
+              type="email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
 
-          <Input
-            name="password"
-            placeholder="Senha"
-            value={password}
-            label="Insira sua senha"
-            type="password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
+            <Input
+              name="password"
+              placeholder="Senha"
+              value={password}
+              label="Insira sua senha"
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
 
-          <Button onClick={handleChange} ghost={false}>
-            Entrar
-          </Button>
-        </form>
+            <Button onClick={handleChange} ghost={false}>
+              Entrar
+            </Button>
+          </form>
 
-        <LinkRegister>
-          <p>Não tem uma conta?</p>
-          <Link href="/register">Registro</Link>
-        </LinkRegister>
-      </Content>
-    </Container>
+          <LinkRegister>
+            <p>Não tem uma conta?</p>
+            <Link href="/register">Registro</Link>
+          </LinkRegister>
+        </Content>
+      </Container>
+    </PublicRoute>
   );
 }

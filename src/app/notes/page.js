@@ -9,12 +9,13 @@ import {
   BlockNotes,
 } from "./notesPage.style";
 import ModalBlur from "@/ui/components/ModalBlur";
+import ProtectedRoute from "@/routes/protectedRoute";
 
 export default function Notes() {
   return (
-    <>
-      <ModalBlur />
+    <ProtectedRoute>
       <Container>
+        <ModalBlur />
         <Header>
           <div>
             <Title>Notas</Title>
@@ -33,6 +34,6 @@ export default function Notes() {
           <NoteItem label="Verificar a temperatura do biodigestor:" />
         </BlockNotes>
       </Container>
-    </>
+    </ProtectedRoute>
   );
 }
