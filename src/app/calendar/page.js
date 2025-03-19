@@ -3,7 +3,13 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import ptLocale from "@fullcalendar/core/locales/pt-br";
 
-import { Container } from "./calendarPage.style";
+import {
+  Container,
+  Header,
+  Title,
+  Description,
+  Tag,
+} from "./calendarPage.style";
 import ModalBlur from "@/ui/components/ModalBlur";
 
 export default function Calendar() {
@@ -11,6 +17,14 @@ export default function Calendar() {
     <>
       <ModalBlur />
       <Container>
+        <Header>
+          <div>
+            <Title>Calendário</Title>
+            <Description>Salve os avanços diários do biodigestor</Description>
+          </div>
+
+          <Tag>Sistema ativo</Tag>
+        </Header>
         <FullCalendar
           plugins={[dayGridPlugin]}
           initialView="dayGridMonth"
