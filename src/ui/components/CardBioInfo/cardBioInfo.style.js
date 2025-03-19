@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledCardBioInfo = styled.div`
   border: 1px solid rgb(243, 244, 246);
-  background: white;
+  background: ${({ theme }) => theme.colors.white};
   border-radius: 1rem;
   padding: 1.5rem;
   border-radius: 0.75rem;

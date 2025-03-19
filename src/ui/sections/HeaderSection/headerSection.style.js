@@ -49,7 +49,7 @@ export const IconWrapper = styled.div`
 export const Title = styled.h1`
   font-size: 3.75rem;
   line-height: 1;
-  color: white;
+  color: ${({ theme }) => theme.colors.white};
   font-weight: 700;
   margin-bottom: 1.5rem;
 
@@ -123,7 +123,7 @@ export const CardText = styled.p`
 `;
 
 export const CardValue = styled.p`
-  color: white;
+  color: ${({ theme }) => theme.colors.white};
   font-weight: 700;
   font-size: 1.125rem;
   line-height: 1.75rem;

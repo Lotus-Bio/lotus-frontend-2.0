@@ -18,7 +18,7 @@ export const IndicadoBlock = styled.div`
   left: 50%;
   transform: translateX(-50%);
   background-color: rgb(92, 156, 84);
-  color: white;
+  color: ${({ theme }) => theme.colors.white};
   padding: 0.2rem 1rem;
   border-radius: 1rem;
   text-align: center;

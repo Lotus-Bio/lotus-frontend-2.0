@@ -11,7 +11,7 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.div`
-  background: white;
+  background: ${({ theme }) => theme.colors.white};
   border-radius: 1rem;
   padding: 1.5rem;
   margin-bottom: 2rem;
@@ -64,7 +64,7 @@ export const BlockInput = styled.div`
   gap: 1rem;
   flex-direction: column;
 
-  background: white;
+  background: ${({ theme }) => theme.colors.white};
   border-radius: 1rem;
 `;
 

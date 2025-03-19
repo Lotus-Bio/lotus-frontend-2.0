@@ -30,7 +30,7 @@ export const Icon = styled.div`
   align-items: center;
 
   svg {
-    color: white;
+    color: ${({ theme }) => theme.colors.white};
     width: 24px;
     height: 24px;
   }

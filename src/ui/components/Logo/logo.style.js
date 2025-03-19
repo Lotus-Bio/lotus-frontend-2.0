@@ -8,7 +8,8 @@ export const StyledLogo = styled.div`
 
   width: fit-content;
 
-  color: ${({ $light }) => ($light ? "white" : "rgb(44, 92, 36)")};
+  color: ${({ $light }) =>
+    $light ? ({ theme }) => theme.colors.white : "rgb(44, 92, 36)"};
   font-weight: 600;
   font-size: ${({ $large }) => ($large ? "40px" : "1.25rem")};
   line-height: ${({ $large }) => ($large ? "40px" : "1.75rem")};

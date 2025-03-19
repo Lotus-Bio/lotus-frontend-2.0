@@ -87,7 +87,7 @@ export const NavMobile = styled.nav`
   }
 
   ${NavItem} {
-    color: white;
+    color: ${({ theme }) => theme.colors.white};
     font-size: 1.25rem;
     &:hover {
       color: rgb(100, 100, 100);

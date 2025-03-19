@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledNoteItem = styled.div`
-  background: white;
+  background: ${({ theme }) => theme.colors.white};
   border-radius: 0.5rem;
   padding: 1rem;
 
