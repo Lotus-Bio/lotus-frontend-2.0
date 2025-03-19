@@ -22,6 +22,9 @@ export const Sidebar = styled.aside`
   display: flex;
   flex-direction: column;
   height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
 `;
 
 export const Logo = styled.div`
@@ -109,6 +112,8 @@ export const ButtonToggle = styled.button`
 `;
 
 export const Content = styled.main`
+  margin-left: ${({ $isCollapsed }) => ($isCollapsed ? "5rem" : "16rem")};
+  transition: all 0.3s ease-in-out;
   flex-grow: 1;
   overflow-y: auto;
   .outlet {

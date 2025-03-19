@@ -25,6 +25,7 @@ import {
 import { auth } from "@/lib/firebase";
 import { signOut } from "firebase/auth";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 const Sidemenu = () => {
   const router = useRouter();
@@ -106,7 +107,7 @@ const Sidemenu = () => {
         </Sidebar>
       </StyledMenu>
 
-      <Content>
+      <Content $isCollapsed={isSidebarCollapsed}>
         <div className="outlet"></div>
       </Content>
     </StyledWrapper>
