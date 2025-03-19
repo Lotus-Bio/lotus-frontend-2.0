@@ -41,7 +41,7 @@ export default function Register() {
       );
       await updateProfile(userCredential.user, { displayName: name });
       toast.success(
-        "Cadastro realizado com sucesso! Faça o login para continuar",
+        "Cadastro realizado com sucesso! Seja bem vindo a dashboard",
         {
           position: "top-center",
           autoClose: 5000,
@@ -49,7 +49,7 @@ export default function Register() {
         }
       );
       setLoading(false);
-      router.push("/login");
+      router.push("/dashboard");
     } catch (error) {
       if (error.code === "auth/network-request-failed") {
         toast.error(
