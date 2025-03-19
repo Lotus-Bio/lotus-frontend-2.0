@@ -1,5 +1,6 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Link from "next/link";
+import { ChevronLeft } from "lucide-react";
 
 export const StyledWrapper = styled.div`
   display: flex;
@@ -18,13 +19,14 @@ export const Sidebar = styled.aside`
   background-color: #ffffff;
   border-right: 1px solid #e5e7eb;
   padding: 1rem;
-  transition: all 0.3s ease-in-out;
   display: flex;
+  align-items: ${({ $isCollapsed }) => ($isCollapsed ? "center" : "start")};
   flex-direction: column;
   height: 100%;
   position: fixed;
   top: 0;
   left: 0;
+  transition: all 0.3s ease-in-out;
 `;
 
 export const Logo = styled.div`
@@ -88,17 +90,18 @@ export const BottomSection = styled.div`
   margin-top: auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 `;
 
 export const ButtonToggle = styled.button`
-  width: 100%;
   background: none;
   color: #6b7280;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 0.5rem;
-  padding: 0.75rem;
+  padding: 0.75rem 0;
   font-size: 0.875rem;
   cursor: pointer;
 
@@ -126,15 +129,24 @@ export const Logout = styled.button`
   align-items: center;
   gap: 1rem;
   text-decoration: none;
-  color: #ef4444;
+  color: #6b7280;
+  padding: 0.75rem;
 
   &:hover {
-    background-color: #fef2f2;
-    color: #dc2626;
+    color: #ef4444;
   }
 
   svg {
     width: 1.25rem;
     height: 1.25rem;
   }
+`;
+
+export const ChevronLeftStyled = styled(ChevronLeft)`
+  transition: transform 0.3s ease;
+  ${({ rotate }) =>
+    rotate &&
+    css`
+      transform: rotate(180deg);
+    `}
 `;

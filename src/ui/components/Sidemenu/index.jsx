@@ -9,7 +9,6 @@ import {
   UserCircle,
   LogOut,
   Leaf,
-  ChevronLeft,
 } from "lucide-react";
 import {
   StyledMenu,
@@ -21,6 +20,7 @@ import {
   Content,
   Logout,
   StyledWrapper,
+  ChevronLeftStyled,
 } from "./sidemenu.style";
 import { auth } from "@/lib/firebase";
 import { signOut } from "firebase/auth";
@@ -88,15 +88,11 @@ const Sidemenu = () => {
             </NavItem>
           </Nav>
 
-          <BottomSection>
+          <BottomSection $isCollapsed={isSidebarCollapsed}>
             <ButtonToggle
               onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
             >
-              <ChevronLeft
-                className={`rotate-180 ${
-                  isSidebarCollapsed ? "" : "rotate-180"
-                }`}
-              />
+              <ChevronLeftStyled rotate={isSidebarCollapsed} />
               {!isSidebarCollapsed && <span>Recolher</span>}
             </ButtonToggle>
             <Logout onClick={handleSignOut}>
