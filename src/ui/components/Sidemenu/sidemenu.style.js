@@ -110,9 +110,7 @@ export const ButtonToggle = styled.button`
 
 export const Content = styled.main`
   flex-grow: 1;
-  padding: 1rem;
   overflow-y: auto;
-
   .outlet {
     padding-top: 2rem;
   }
