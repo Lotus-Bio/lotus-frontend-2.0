@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
               style={{
                 display: "flex",
                 minHeight: "100vh",
-                background: "rgb(249, 250, 251)",
+                background: "rgb(240, 240, 240)",
               }}
             >
               <Sidemenu />
