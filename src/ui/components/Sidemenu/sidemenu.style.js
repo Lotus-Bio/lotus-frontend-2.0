@@ -150,8 +150,8 @@ export const Logout = styled.button`
 
 export const ChevronLeftStyled = styled(ChevronLeft)`
   transition: transform 0.3s ease;
-  ${({ rotate }) =>
-    rotate &&
+  ${({ $rotate }) =>
+    $rotate &&
     css`
       transform: rotate(180deg);
     `}

@@ -99,7 +99,7 @@ const Sidemenu = () => {
             <ButtonToggle
               onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
             >
-              <ChevronLeftStyled rotate={isSidebarCollapsed} />
+              <ChevronLeftStyled $rotate={isSidebarCollapsed} />
               {!isSidebarCollapsed && <span>Recolher</span>}
             </ButtonToggle>
             <Logout onClick={handleSignOut}>
