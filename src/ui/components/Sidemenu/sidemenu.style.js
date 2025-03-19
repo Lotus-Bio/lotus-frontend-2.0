@@ -31,20 +31,26 @@ export const Sidebar = styled.aside`
 
 export const Logo = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 2rem;
+  gap: 1rem;
 
-  .icon {
-    padding: 0.5rem;
-    background-color: #d1fae5;
-    border-radius: 0.375rem;
-  }
-
-  .text {
+  span {
+    color: rgb(17, 24, 39);
     font-weight: 600;
-    color: #1f2937;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
+`;
+export const BlockIcon = styled.div`
+  background: rgb(240, 253, 244);
+  color: rgb(22, 163, 74);
+
+  display: flex;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Nav = styled.nav`

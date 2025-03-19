@@ -13,6 +13,8 @@ import {
 import {
   StyledMenu,
   Sidebar,
+  Logo,
+  BlockIcon,
   Nav,
   NavItem,
   BottomSection,
@@ -67,7 +69,12 @@ const Sidemenu = () => {
     <StyledWrapper>
       <StyledMenu>
         <Sidebar $isCollapsed={isSidebarCollapsed}>
-          <Leaf />
+          <Logo>
+            <BlockIcon>
+              <Leaf />
+            </BlockIcon>
+            {!isSidebarCollapsed && <span>Lotus</span>}
+          </Logo>
 
           <Nav>
             <NavItem href="/dashboard" isActive={isActive("/dashboard")}>
