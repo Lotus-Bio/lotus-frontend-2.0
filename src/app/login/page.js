@@ -9,14 +9,17 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { auth } from "@/lib/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import Loading from "@/ui/components/Loading";
 
 export default function Login() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   async function handleChange(e) {
     e.preventDefault();
+    setLoading(true);
 
     if (!email || !password) {
       toast.error("Por favor, preencha todos os campos", {
@@ -24,6 +27,7 @@ export default function Login() {
         autoClose: 5000,
         theme: "dark",
       });
+      setLoading(false);
       return;
     }
 
@@ -37,6 +41,7 @@ export default function Login() {
           theme: "dark",
         }
       );
+      setLoading(false);
       router.push("/dashboard");
     } catch (error) {
       if (error.code === "auth/network-request-failed") {
@@ -49,6 +54,7 @@ export default function Login() {
           }
         );
 
+        setLoading(false);
         return;
       }
 
@@ -62,6 +68,7 @@ export default function Login() {
           }
         );
 
+        setLoading(false);
         return;
       }
 
@@ -70,11 +77,14 @@ export default function Login() {
         autoClose: 5000,
         theme: "dark",
       });
+      setLoading(false);
     }
   }
 
   return (
     <Container>
+      <Loading loading={loading} />
+
       <Content>
         <Logo large />
 

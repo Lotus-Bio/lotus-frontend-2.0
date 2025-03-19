@@ -22,14 +22,16 @@ import {
 import Input from "@/ui/components/Input";
 import Button from "@/ui/components/Button";
 import { toast } from "react-toastify";
+import Loading from "@/ui/components/Loading";
 
 export default function Profile() {
   const { user } = useAuth();
   const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
-  const [currentPassword, setCurrentPassword] = useState(""); // Para reautenticação
-  const [newPassword, setNewPassword] = useState(""); // Para a nova senha
-  const [newEmail, setNewEmail] = useState(""); // Para o novo email
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [newEmail, setNewEmail] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (user) {
@@ -39,6 +41,8 @@ export default function Profile() {
   }, [user]);
 
   const handleUpdateName = async () => {
+    setLoading(true);
+
     try {
       if (user && displayName !== user.displayName) {
         await updateProfile(user, { displayName });
@@ -47,6 +51,8 @@ export default function Profile() {
           autoClose: 5000,
           theme: "dark",
         });
+
+        setLoading(false);
       }
     } catch (error) {
       console.log(error);
@@ -55,6 +61,8 @@ export default function Profile() {
         autoClose: 5000,
         theme: "dark",
       });
+
+      setLoading(false);
     }
   };
 
@@ -102,6 +110,18 @@ export default function Profile() {
   // };
 
   const handleUpdatePassword = async () => {
+    setLoading(true);
+
+    if (!currentPassword || !newPassword) {
+      toast.error("Por favor, preencha todos os campos", {
+        position: "top-center",
+        autoClose: 5000,
+        theme: "dark",
+      });
+      setLoading(false);
+      return;
+    }
+
     try {
       if (user && newPassword) {
         if (!currentPassword) {
@@ -110,6 +130,7 @@ export default function Profile() {
             autoClose: 5000,
             theme: "dark",
           });
+          setLoading(false);
           return;
         }
         const credential = EmailAuthProvider.credential(
@@ -123,6 +144,7 @@ export default function Profile() {
           autoClose: 5000,
           theme: "dark",
         });
+        setLoading(false);
       }
     } catch (error) {
       console.log(error);
@@ -131,11 +153,14 @@ export default function Profile() {
         autoClose: 5000,
         theme: "dark",
       });
+
+      setLoading(false);
     }
   };
 
   return (
     <Container>
+      <Loading loading={loading} />
       <Header>
         <div>
           <Title>Perfil</Title>

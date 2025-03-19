@@ -9,15 +9,18 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { auth } from "@/lib/firebase";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import Loading from "@/ui/components/Loading";
 
 export default function Register() {
   const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   async function handleChange(e) {
     e.preventDefault();
+    setLoading(true);
 
     if (!name || !email || !password) {
       toast.error("Por favor, preencha todos os campos", {
@@ -25,6 +28,7 @@ export default function Register() {
         autoClose: 5000,
         theme: "dark",
       });
+      setLoading(false);
       return;
     }
 
@@ -43,6 +47,7 @@ export default function Register() {
           theme: "dark",
         }
       );
+      setLoading(false);
       router.push("/login");
     } catch (error) {
       if (error.code === "auth/network-request-failed") {
@@ -54,7 +59,7 @@ export default function Register() {
             theme: "dark",
           }
         );
-
+        setLoading(false);
         return;
       }
 
@@ -64,7 +69,7 @@ export default function Register() {
           autoClose: 5000,
           theme: "dark",
         });
-
+        setLoading(false);
         return;
       }
 
@@ -73,12 +78,14 @@ export default function Register() {
         autoClose: 5000,
         theme: "dark",
       });
-      console.error("Erro ao cadastrar usuário:", error);
+      setLoading(false);
     }
   }
 
   return (
     <Container>
+      <Loading loading={loading} />
+
       <Content>
         <Logo large />
 
