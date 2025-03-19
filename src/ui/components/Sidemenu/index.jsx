@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import {
   LayoutDashboard,
@@ -32,6 +32,7 @@ import { toast } from "react-toastify";
 const Sidemenu = () => {
   const router = useRouter();
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
 
   const isActive = (path) => pathname === path;
@@ -42,6 +43,22 @@ const Sidemenu = () => {
     "/notes",
     "/profile",
   ].includes(pathname);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setIsMobile(true);
+        setIsSidebarCollapsed(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   if (!shouldRenderMenu) {
     return null;
@@ -96,12 +113,14 @@ const Sidemenu = () => {
           </Nav>
 
           <BottomSection $isCollapsed={isSidebarCollapsed}>
-            <ButtonToggle
-              onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
-            >
-              <ChevronLeftStyled $rotate={isSidebarCollapsed} />
-              {!isSidebarCollapsed && <span>Recolher</span>}
-            </ButtonToggle>
+            {!isMobile && (
+              <ButtonToggle
+                onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
+              >
+                <ChevronLeftStyled $rotate={isSidebarCollapsed} />
+                {!isSidebarCollapsed && <span>Recolher</span>}
+              </ButtonToggle>
+            )}
             <Logout onClick={handleSignOut}>
               <LogOut />
               {!isSidebarCollapsed && <span>Sair</span>}

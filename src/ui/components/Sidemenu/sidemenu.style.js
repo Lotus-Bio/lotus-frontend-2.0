@@ -27,6 +27,10 @@ export const Sidebar = styled.aside`
   top: 0;
   left: 0;
   transition: all 0.3s ease-in-out;
+
+  @media (max-width: 768px) {
+    width: ${({ $isCollapsed }) => ($isCollapsed ? "5rem" : "5rem")};
+  }
 `;
 
 export const Logo = styled.div`
