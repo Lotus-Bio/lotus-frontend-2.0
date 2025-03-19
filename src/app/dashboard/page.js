@@ -1,6 +1,16 @@
 "use client";
-import { Container } from "./dashboardPage.style";
+import CardBioInfo from "@/ui/components/CardBioInfo";
+import {
+  Container,
+  Header,
+  Title,
+  Description,
+  Tag,
+  BlockBioInfo,
+  UserInfo,
+} from "./dashboardPage.style";
 import { useAuth } from "@/context/AuthContext";
+import { Wind, Thermometer, Droplets } from "lucide-react";
 
 export default function Dashboard() {
   const { user } = useAuth();
@@ -8,14 +18,46 @@ export default function Dashboard() {
   console.log(user);
   return (
     <Container>
-      <h1>dashboard</h1>
+      <Header>
+        <div>
+          <Title>Dashboard</Title>
+          <Description>Monitoramento em tempo real</Description>
+        </div>
 
-      {user && (
-        <>
-          <p>Nome: {user.displayName}</p>
-          <p>Email: {user.email}</p>
-        </>
-      )}
+        <Tag>Sistema ativo</Tag>
+      </Header>
+
+      <BlockBioInfo>
+        <CardBioInfo
+          icon={<Wind />}
+          classify="Normal"
+          title="Umidade"
+          value="70,00 %"
+        />
+
+        <CardBioInfo
+          icon={<Thermometer />}
+          classify="Ideal"
+          title="Temperatura"
+          value="19.0 °C"
+        />
+
+        <CardBioInfo
+          icon={<Droplets />}
+          classify="Ótimo"
+          title="Volume de gás"
+          value="115 ppm"
+        />
+      </BlockBioInfo>
+
+      <UserInfo>
+        {user && (
+          <>
+            <p>{user.displayName}</p>
+            <p>{user.email}</p>
+          </>
+        )}
+      </UserInfo>
     </Container>
   );
 }
