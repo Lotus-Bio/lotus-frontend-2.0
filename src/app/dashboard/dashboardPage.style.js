@@ -8,7 +8,7 @@ export const Container = styled.div`
 
 export const Header = styled.div`
   background: white;
-  border-radius: 100px;
+  border-radius: 1rem;
   padding: 1.5rem;
   margin-bottom: 2rem;
 
