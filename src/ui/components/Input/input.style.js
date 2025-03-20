@@ -26,7 +26,7 @@ export const StyledTextarea = styled.textarea`
 `;
 
 export const Label = styled.label`
-  color: rgb(55, 65, 81);
+  color: ${({ theme }) => theme.colors.darkGrey};
   font-size: 0.875rem;
   line-height: 1.25rem;
   margin-bottom: 0.25rem;
