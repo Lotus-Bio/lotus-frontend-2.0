@@ -45,7 +45,7 @@ export const Value = styled.h5`
 `;
 
 export const Description = styled.p`
-  color: rgb(75, 85, 99);
+  color: ${({ theme }) => theme.colors.grey};
   font-size: 1rem;
   line-height: inherit;
   text-align: center;
@@ -63,7 +63,7 @@ export const ListItem = styled.p`
   justify-content: start;
   align-items: center;
   gap: 0.5rem;
-  color: rgb(75, 85, 99);
+  color: ${({ theme }) => theme.colors.grey};
   font-size: 1rem;
   line-height: inherit;
 `;

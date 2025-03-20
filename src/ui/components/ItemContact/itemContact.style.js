@@ -32,6 +32,6 @@ export const Title = styled.h4`
 `;
 
 export const Info = styled.p`
-  color: rgb(75, 85, 99);
+  color: ${({ theme }) => theme.colors.grey};
   font-size: 1rem;
 `;
