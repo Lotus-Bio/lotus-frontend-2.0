@@ -5,7 +5,8 @@ export const StyledCardPlan = styled.div`
   border: ${({ $popular, theme }) =>
     $popular ? `2px solid ${theme.colors.lightGreen}` : "none"};
 
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 20px ${({ theme }) => theme.colors.shadow},
+    0 6px 12px ${({ theme }) => theme.colors.shadow};
   border-radius: 1rem;
   padding: 2rem;
   max-width: 320px;

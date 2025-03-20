@@ -9,5 +9,5 @@ export const StyledNoteItem = styled.div`
   gap: 0.5rem;
 
   font-size: 1rem;
-  color: #6b7280;
+  color: ${({ theme }) => theme.colors.darkGrey};
 `;

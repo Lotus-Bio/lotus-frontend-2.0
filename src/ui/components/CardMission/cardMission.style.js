@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const StyledCardMission = styled.div`
   padding: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px ${({ theme }) => theme.colors.shadow},
+    0 1px 10px ${({ theme }) => theme.colors.shadow};
   border-radius: 0.75rem;
 
   max-width: 400px;
@@ -18,7 +19,8 @@ export const StyledCardMission = styled.div`
   transition-duration: 150ms;
 
   &:hover {
-    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 20px ${({ theme }) => theme.colors.shadow},
+      0 6px 12px ${({ theme }) => theme.colors.shadow};
   }
 `;
 

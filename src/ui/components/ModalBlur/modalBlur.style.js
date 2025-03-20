@@ -4,7 +4,7 @@ export const StyledModalBlur = styled.div`
   position: fixed;
   width: -webkit-fill-available;
   height: -webkit-fill-available;
-  background: rgba(0, 0, 0, 0.5);
+  background: ${({ theme }) => theme.colors.blur};
   backdrop-filter: blur(3px);
   z-index: 2;
 
@@ -20,7 +20,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.5);
+  background: ${({ theme }) => theme.colors.blur};
   padding: 2rem;
   border-radius: 0.5rem;
   text-align: center;
@@ -34,13 +34,13 @@ export const Container = styled.div`
 
   p {
     font-size: 1rem;
-    color: rgb(156, 163, 175);
+    color: ${({ theme }) => theme.colors.lightGrey};
   }
 `;
 
 export const BlockIcon = styled.div`
   svg {
-    color: #16a34a;
+    color: ${({ theme }) => theme.colors.lightGreen};
     width: 40px;
     height: 40px;
   }

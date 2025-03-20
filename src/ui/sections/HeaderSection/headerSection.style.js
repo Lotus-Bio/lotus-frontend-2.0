@@ -92,7 +92,7 @@ export const Card = styled.div`
   position: relative;
   padding: 4px;
   border-radius: 8px;
-  border: 1px solid rgb(31, 41, 55);
+  border: 1px solid ${({ theme }) => theme.colors.darkDarkGrey};
 `;
 
 export const CardImage = styled.img`
@@ -110,14 +110,14 @@ export const CardContent = styled.div`
   bottom: -16px;
   right: -16px;
   padding: 16px;
-  background-color: rgb(17 24 39 / 0.5);
-  border: 1px solid rgb(31, 41, 55);
+  background-color: ${({ theme }) => theme.colors.blur};
+  border: 1px solid ${({ theme }) => theme.colors.darkDarkGrey};
   backdrop-filter: blur(4px);
   border-radius: 8px;
 `;
 
 export const CardText = styled.p`
-  color: rgb(156, 163, 175);
+  color: ${({ theme }) => theme.colors.lightGrey};
   font-size: 0.875rem;
   line-height: 1.25rem;
 `;

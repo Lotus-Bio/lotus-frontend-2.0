@@ -16,8 +16,8 @@ import ProtectedRoute from "@/routes/protectedRoute";
 export default function Calendar() {
   return (
     <ProtectedRoute>
+      <ModalBlur />
       <Container>
-        <ModalBlur />
         <Header>
           <div>
             <Title>Calendário</Title>

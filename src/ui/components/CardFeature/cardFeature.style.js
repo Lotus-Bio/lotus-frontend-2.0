@@ -15,7 +15,8 @@ export const StyledCardFeature = styled.div`
   transition-duration: 150ms;
 
   &:hover {
-    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 20px ${({ theme }) => theme.colors.shadow},
+      0 6px 12px ${({ theme }) => theme.colors.shadow};
   }
 `;
 

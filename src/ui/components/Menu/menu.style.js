@@ -43,7 +43,7 @@ export const NavItem = styled(Link)`
   line-height: 1.25rem;
 
   &:hover {
-    color: rgb(100, 100, 100);
+    color: ${({ theme }) => theme.colors.lightGrey};
   }
 `;
 
@@ -60,7 +60,7 @@ export const BurgerIcon = styled.div`
   span {
     width: 30px;
     height: 4px;
-    background: #fff;
+    background: ${({ theme }) => theme.colors.white};
     border-radius: 5px;
   }
 
@@ -90,7 +90,7 @@ export const NavMobile = styled.nav`
     color: ${({ theme }) => theme.colors.white};
     font-size: 1.25rem;
     &:hover {
-      color: rgb(100, 100, 100);
+      color: ${({ theme }) => theme.colors.lightGrey};
     }
   }
 `;

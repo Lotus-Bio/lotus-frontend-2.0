@@ -29,21 +29,21 @@ export const Header = styled.div`
 `;
 
 export const Title = styled.h2`
-  color: rgb(17, 24, 39);
+  color: ${({ theme }) => theme.colors.darkGrey};
   font-weight: 600;
   font-size: 1.5rem;
   line-height: 2rem;
 `;
 
 export const Description = styled.p`
-  color: rgb(107, 114, 128);
+  color: ${({ theme }) => theme.colors.darkGrey};
   font-size: 0.875rem;
   line-height: 1%.25;
 `;
 
 export const Tag = styled.span`
-  background: rgb(240, 253, 244);
-  color: rgb(22, 163, 74);
+  background: ${({ theme }) => theme.colors.lightBackgroundGreen};
+  color: ${({ theme }) => theme.colors.lightGreen};
   font-weight: bold;
   font-size: 0.875rem;
   line-height: 1.25rem;

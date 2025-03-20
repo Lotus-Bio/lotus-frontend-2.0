@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledCardBioInfo = styled.div`
-  border: 1px solid rgb(243, 244, 246);
+  border: 1px solid ${({ theme }) => theme.colors.lightGrey};
   background: ${({ theme }) => theme.colors.white};
   border-radius: 1rem;
   padding: 1.5rem;
@@ -10,8 +10,8 @@ export const StyledCardBioInfo = styled.div`
   width: 100%;
 
   &:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-      0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 15px -3px ${({ theme }) => theme.colors.shadow},
+      0 4px 6px -4px ${({ theme }) => theme.colors.shadow};
   }
 `;
 
@@ -24,7 +24,7 @@ export const BlockAlign = styled.div`
 `;
 
 export const Icon = styled.div`
-  background: rgb(240, 253, 244);
+  background: ${({ theme }) => theme.colors.lightBackgroundGreen};
   width: 36px;
   height: 36px;
   border-radius: 0.5rem;
@@ -34,15 +34,15 @@ export const Icon = styled.div`
   align-items: center;
 
   svg {
-    color: rgb(22, 163, 74);
+    color: ${({ theme }) => theme.colors.lightGreen};
     width: 20px;
     height: 20px;
   }
 `;
 
 export const Tag = styled.span`
-  background: rgb(240, 253, 244);
-  color: rgb(22, 163, 74);
+  background: ${({ theme }) => theme.colors.lightBackgroundGreen};
+  color: ${({ theme }) => theme.colors.lightGreen};
   font-weight: 500;
   font-size: 0.75rem;
   line-height: 1rem;
@@ -51,14 +51,14 @@ export const Tag = styled.span`
 `;
 
 export const Title = styled.h3`
-  color: rgb(107, 114, 128);
+  color: ${({ theme }) => theme.colors.darkGrey};
   font-size: 0.875rem;
   font-weight: 900;
   line-height: 1.25rem;
 `;
 
 export const Value = styled.p`
-  color: rgb(22, 163, 74);
+  color: ${({ theme }) => theme.colors.lightGreen};
   font-size: 1.875rem;
   line-height: 2.25rem;
   font-weight: bold;

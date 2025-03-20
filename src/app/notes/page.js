@@ -14,8 +14,8 @@ import ProtectedRoute from "@/routes/protectedRoute";
 export default function Notes() {
   return (
     <ProtectedRoute>
+      <ModalBlur />
       <Container>
-        <ModalBlur />
         <Header>
           <div>
             <Title>Notas</Title>

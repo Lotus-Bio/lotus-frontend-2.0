@@ -10,14 +10,14 @@ export const StyledWrapper = styled.div`
 export const StyledMenu = styled.div`
   display: flex;
   min-height: 100vh;
-  background-color: #f8fafc;
+  background-color: ${({ theme }) => theme.colors.white};
   width: 100%;
 `;
 
 export const Sidebar = styled.aside`
   width: ${({ $isCollapsed }) => ($isCollapsed ? "5rem" : "16rem")};
-  background-color: #ffffff;
-  border-right: 1px solid #e5e7eb;
+  background-color: ${({ theme }) => theme.colors.white};
+  border-right: 1px solid ${({ theme }) => theme.colors.lightGrey};
   padding: 1rem;
   display: flex;
   align-items: ${({ $isCollapsed }) => ($isCollapsed ? "center" : "start")};
@@ -40,15 +40,15 @@ export const Logo = styled.div`
   gap: 1rem;
 
   span {
-    color: rgb(17, 24, 39);
+    color: ${({ theme }) => theme.colors.darkGrey};
     font-weight: 600;
     font-size: 1.5rem;
     line-height: 2rem;
   }
 `;
 export const BlockIcon = styled.div`
-  background: rgb(240, 253, 244);
-  color: rgb(22, 163, 74);
+  background: ${({ theme }) => theme.colors.lightBackgroundGreen};
+  color: ${({ theme }) => theme.colors.lightGreen};
 
   display: flex;
   padding: 0.5rem;
@@ -78,12 +78,12 @@ export const NavItemStyled = styled.div`
   align-items: center;
   gap: 1rem;
   text-decoration: none;
-  color: #6b7280;
+  color: ${({ theme }) => theme.colors.darkGrey};
   font-size: 1rem;
   font-weight: 500;
 
   &:hover {
-    color: #16a34a;
+    color: ${({ theme }) => theme.colors.lightGreen};
   }
 
   svg {
@@ -92,7 +92,7 @@ export const NavItemStyled = styled.div`
   }
 
   &.active {
-    color: #16a34a;
+    color: ${({ theme }) => theme.colors.lightGreen};
   }
 `;
 
@@ -107,7 +107,7 @@ export const BottomSection = styled.div`
 
 export const ButtonToggle = styled.button`
   background: none;
-  color: #6b7280;
+  color: ${({ theme }) => theme.colors.darkGrey};
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -116,7 +116,7 @@ export const ButtonToggle = styled.button`
   cursor: pointer;
 
   &:hover {
-    color: #16a34a;
+    color: ${({ theme }) => theme.colors.lightGreen};
   }
 
   svg {
@@ -139,11 +139,11 @@ export const Logout = styled.button`
   align-items: center;
   gap: 1rem;
   text-decoration: none;
-  color: #6b7280;
+  color: ${({ theme }) => theme.colors.darkGrey};
   padding: 0.75rem;
 
   &:hover {
-    color: #ef4444;
+    color: ${({ theme }) => theme.colors.red};
   }
 
   svg {
