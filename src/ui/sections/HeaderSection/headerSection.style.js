@@ -2,7 +2,6 @@ import styled from "styled-components";
 import Container from "@/ui/components/Container";
 
 export const StyledHeaderSection = styled.header`
-  width: 100vw;
   height: 100vh;
   background-image: radial-gradient(circle at center, #030712, #111827);
   display: flex;

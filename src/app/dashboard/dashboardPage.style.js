@@ -36,7 +36,7 @@ export const Title = styled.h2`
 `;
 
 export const Description = styled.p`
-  color: ${({ theme }) => theme.colors.darkGrey};
+  color: ${({ theme }) => theme.colors.grey};
   font-size: 0.875rem;
   line-height: 1%.25;
 `;
