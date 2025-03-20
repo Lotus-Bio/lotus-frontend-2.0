@@ -144,6 +144,7 @@ export const Logout = styled.button`
 
   &:hover {
     color: ${({ theme }) => theme.colors.red};
+    cursor: pointer;
   }
 
   svg {
