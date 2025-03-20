@@ -27,7 +27,7 @@ export const IndicadoBlock = styled.div`
 `;
 
 export const Title = styled.h4`
-  color: rgb(44, 92, 36);
+  color: ${({ theme }) => theme.colors.darkGreen};
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 2rem;

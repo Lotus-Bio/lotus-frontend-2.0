@@ -22,7 +22,7 @@ export const Content = styled.div`
   gap: 2rem;
 
   h2 {
-    color: rgb(44, 92, 36);
+    color: ${({ theme }) => theme.colors.darkGreen};
     font-size: 1.5rem;
     font-weight: 700;
     line-height: 2;

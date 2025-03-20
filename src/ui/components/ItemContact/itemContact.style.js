@@ -24,7 +24,7 @@ export const Icon = styled.div`
 `;
 
 export const Title = styled.h4`
-  color: rgb(44, 92, 36);
+  color: ${({ theme }) => theme.colors.darkGreen};
   font-weight: 700;
   font-size: 1.125rem;
   line-height: 1.75rem;

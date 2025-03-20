@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledTitleSection = styled.h2`
-  color: rgb(44, 92, 36);
+  color: ${({ theme }) => theme.colors.darkGreen};
   font-size: 3rem;
   font-weight: 700;
   line-height: 1;
