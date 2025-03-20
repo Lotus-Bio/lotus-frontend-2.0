@@ -38,7 +38,7 @@ export const Nav = styled.nav`
 `;
 
 export const NavItem = styled(Link)`
-  color: rgb(209, 213, 219);
+  color: ${({ theme }) => theme.colors.lightGrey};
   font-size: 0.875rem;
   line-height: 1.25rem;
 

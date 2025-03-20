@@ -65,7 +65,7 @@ export const Title = styled.h1`
 
 export const Description = styled.p`
   font-size: 1.125rem;
-  color: rgb(209, 213, 219);
+  color: ${({ theme }) => theme.colors.lightGrey};
   margin-bottom: 1rem;
   line-height: 1.625;
 
