@@ -1,4 +1,24 @@
 import styled from "styled-components";
+import Link from "next/link";
+
+export const BackPage = styled(Link)`
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    color: ${({ theme }) => theme.colors.lightGreen};
+  }
+
+  p:hover {
+    color: ${({ theme }) => theme.colors.buttonHoverGreen};
+  }
+`;
 
 export const Container = styled.div`
   width: 100vw;

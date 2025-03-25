@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Logo from "@/ui/components/Logo";
-import { Container, Content, LinkRegister } from "./loginPage.style";
+import { BackPage, Container, Content, LinkRegister } from "./loginPage.style";
 import Input from "@/ui/components/Input";
 import Button from "@/ui/components/Button";
 import Link from "next/link";
@@ -11,6 +11,7 @@ import { auth } from "@/lib/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import Loading from "@/ui/components/Loading";
 import PublicRoute from "@/routes/publicRoutes";
+import { ArrowLeft } from "lucide-react";
 
 export default function Login() {
   const router = useRouter();
@@ -85,6 +86,12 @@ export default function Login() {
   return (
     <PublicRoute>
       <Container>
+        <BackPage href="/">
+          <p>
+            <ArrowLeft size={32} />
+            Voltar
+          </p>
+        </BackPage>
         <Loading loading={loading} />
 
         <Content>
