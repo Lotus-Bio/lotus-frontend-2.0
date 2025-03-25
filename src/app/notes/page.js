@@ -14,7 +14,7 @@ import ProtectedRoute from "@/routes/protectedRoute";
 export default function Notes() {
   return (
     <ProtectedRoute>
-      <ModalBlur />
+      {/* <ModalBlur /> */}
       <Container>
         <Header>
           <div>
@@ -31,7 +31,7 @@ export default function Notes() {
           <NoteItem label="Instalação do biodigestor" />
           <NoteItem label="Adicionar matéria orgânica" />
           <NoteItem label="Monitorar a produção de biogás" />
-          <NoteItem label="Verificar a temperatura do biodigestor:" />
+          <NoteItem label="Verificar a temperatura do biodigestor" />
         </BlockNotes>
       </Container>
     </ProtectedRoute>
