@@ -56,7 +56,7 @@ export default function Dashboard() {
         {dados ? (
           <BlockBioInfo>
             <CardBioInfo
-              icon={<Wind />}
+              icon={<Droplets />}
               classify="Normal"
               title="Umidade"
               value={dados.umidade + " %"}
@@ -70,7 +70,7 @@ export default function Dashboard() {
             />
 
             <CardBioInfo
-              icon={<Droplets />}
+              icon={<Wind />}
               classify="Ótimo"
               title="Volume de gás"
               value={dados.metano + " ppm"}
