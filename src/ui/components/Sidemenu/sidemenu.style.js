@@ -100,8 +100,8 @@ export const BottomSection = styled.div`
   margin-top: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: start;
+  justify-content: start;
   width: 100%;
 `;
 
@@ -111,7 +111,7 @@ export const ButtonToggle = styled.button`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 0;
+  padding: 0.75rem;
   font-size: 0.875rem;
   cursor: pointer;
 
@@ -121,6 +121,8 @@ export const ButtonToggle = styled.button`
 
   svg {
     transition: transform 0.3s ease;
+    width: 1.25rem;
+    height: 1.25rem;
   }
 `;
 
@@ -137,10 +139,11 @@ export const Content = styled.main`
 export const Logout = styled.button`
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.darkGrey};
   padding: 0.75rem;
+  font-size: 0.875rem;
 
   &:hover {
     color: ${({ theme }) => theme.colors.red};
