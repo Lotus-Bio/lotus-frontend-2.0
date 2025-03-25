@@ -14,12 +14,15 @@ import { Wind, Thermometer, Droplets } from "lucide-react";
 import ProtectedRoute from "@/routes/protectedRoute";
 import { useEffect, useState } from "react";
 import { database, ref, onValue } from "@/lib/firebase";
+import Loading from "@/ui/components/Loading";
 
 export default function Dashboard() {
   const [dados, setDados] = useState(null);
+  const [loading, setLoading] = useState(false);
   const { user } = useAuth();
 
   useEffect(() => {
+    setLoading(true);
     const usuarioRef = ref(database, "usuarios"); // Caminho no Realtime Database
 
     // Escutando mudanças em tempo real
@@ -33,6 +36,7 @@ export default function Dashboard() {
       }
     });
 
+    setLoading(false);
     // Cleanup: remove listener ao desmontar o componente
     return () => unsubscribe();
   }, []);
@@ -73,7 +77,7 @@ export default function Dashboard() {
             />
           </BlockBioInfo>
         ) : (
-          <p>Carregando dados...</p>
+          <Loading loading={loading} />
         )}
 
         <UserInfo>
