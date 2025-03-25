@@ -36,7 +36,15 @@ Instale as dependências necessárias para rodar o projeto:
 npm install
 ```
 
-### 3. Rodar o frontend
+## 3. Arquivo .env
+
+Na estrutura do projeto, há um arquivo chamado ´.env.example.´ Para que o projeto funcione corretamente, renomeie esse arquivo para ´.env´ e atribua valores a todas as variáveis de ambiente listadas nele.
+
+Para obter esses valores, crie um projeto no Firebase e siga as instruções de configuração fornecidas pela plataforma. Em seguida, copie os dados do objeto ´firebaseConfig´ e preencha as variáveis correspondentes no arquivo ´.env´.
+
+Após essa configuração, o projeto estará pronto para utilizar o Firebase como banco de dados.
+
+### 4. Rodar o frontend
 
 Para iniciar o servidor de desenvolvimento local, execute o seguinte comando:
 
