@@ -5,12 +5,14 @@ export const StyledCardPlan = styled.div`
   border: ${({ $popular, theme }) =>
     $popular ? `2px solid ${theme.colors.lightGreen}` : "none"};
 
-  box-shadow: 0 15px 20px ${({ theme }) => theme.colors.shadow},
+  box-shadow:
+    0 15px 20px ${({ theme }) => theme.colors.shadow},
     0 6px 12px ${({ theme }) => theme.colors.shadow};
   border-radius: 1rem;
   padding: 2rem;
   max-width: 320px;
   width: 100%;
+  height: -webkit-fill-available;
 `;
 
 export const IndicadoBlock = styled.div`
