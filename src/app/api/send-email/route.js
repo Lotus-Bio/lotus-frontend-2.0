@@ -14,7 +14,7 @@ export async function POST(request) {
 
     const { data, error } = await resend.emails.send({
       from: "delivered@resend.dev",
-      to: "caue.netto123@gmail.com",
+      to: "lotusbiodigestorinfo@gmail.com",
       subject: "Contato Lotus",
       react: emailContent,
     });

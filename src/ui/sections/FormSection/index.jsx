@@ -73,7 +73,6 @@ const FormSection = ({ message, setMessage }) => {
       }
       setLoading(false);
     } catch (error) {
-      console.log(error);
       toast.error(
         "Não foi possível enviar o e-mail. Por favor, tente novamente mais tarde!",
         {
