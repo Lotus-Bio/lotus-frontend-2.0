@@ -6,15 +6,14 @@ export const StyledPlanSection = styled.section`
 `;
 
 export const ContainerPlan = styled(Container)`
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  align-items: center;
-  justify-items: center;
+  display: flex;
+  gap: 2rem;
+  align-items: stretch;
+  justify-content: center;
 
   margin-top: 4rem;
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 `;

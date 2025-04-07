@@ -12,7 +12,6 @@ export const StyledCardPlan = styled.div`
   padding: 2rem;
   max-width: 320px;
   width: 100%;
-  height: -webkit-fill-available;
 `;
 
 export const IndicadoBlock = styled.div`
