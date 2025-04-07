@@ -13,7 +13,8 @@ export const ContainerPlan = styled(Container)`
 
   margin-top: 4rem;
 
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
   }
 `;
