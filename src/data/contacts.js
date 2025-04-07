@@ -4,16 +4,16 @@ export const contacts = [
   {
     icon: Mail,
     title: "Envie-nos um e-mail",
-    info: "info@lotusbiodigester.com",
+    info: "lotusbiodigestorinfo@gmail.com",
   },
   {
     icon: Phone,
     title: "Ligue para nós",
-    info: "+55 (15) 4002-8922",
+    info: "(41) 99611-4665",
   },
   {
     icon: Map,
     title: "Visite-nos",
-    info: "Rua das Palmeiras, 123, CEP: 12345-678",
+    info: "Av. Europa, 1097 - Jardim Europa, Itapeva - SP, 18406-460",
   },
 ];
