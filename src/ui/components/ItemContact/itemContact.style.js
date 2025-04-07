@@ -4,7 +4,7 @@ export const StyledItemContact = styled.div`
   display: grid;
   grid-template-columns: 1fr 4fr;
 
-  max-width: 250px;
+  max-width: 300px;
   width: 100%;
 
   justify-content: center;
