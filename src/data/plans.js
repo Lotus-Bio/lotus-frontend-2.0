@@ -13,21 +13,7 @@ export const plans = [
     message:
       "Estou interessado no Plano Iniciante e gostaria de mais informações.",
   },
-  {
-    title: "Profissional",
-    value: "R$99,99",
-    description: "Ideal para operações de médio porte",
-    items: [
-      "Sistema de monitoramento avançado",
-      "Análise em tempo real",
-      "Suporte prioritário",
-      "Garantia de 2 anos",
-      "Resolução de problemas remota",
-    ],
-    popular: true,
-    message:
-      "Estou interessado no Plano Profissional e gostaria de mais informações.",
-  },
+
   {
     title: "Empresarial",
     value: "R$199,99",
