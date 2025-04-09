@@ -1,13 +1,14 @@
 export const plans = [
   {
-    title: "Iniciante",
+    title: "S/DISPOSITIVO",
     value: "R$49,99",
-    description: "Perfeito para pequenas fazendas e famílias",
+    description: "Perfeito para quem gosta de pôr a mão na massa.",
     items: [
-      "Monitoramento básico do Arduino",
-      "Acesso ao aplicativo móvel",
+      "Integração completa do sistema",
+      "Instalação técnica e testes",
       "Suporte por e-mail",
-      "Garantia de 1 ano",
+      "Garantia e suporte",
+      "Análise em tempo real",
     ],
     popular: false,
     message:
@@ -15,17 +16,17 @@ export const plans = [
   },
 
   {
-    title: "Empresarial",
-    value: "R$199,99",
-    description: "Para uso industrial em larga escala",
+    title: "C/DISPOSITIVO",
+    value: "R$332,76",
+    description: "Tudo pronto! Deixa o trabalho com a gente.",
     items: [
-      "Integração total do sistema",
-      "Análise avançada",
-      "Suporte 24/7",
-      "Garantia estendida",
-      "Manutenção no local",
+      "Dispositivo completo, pronto para uso",
+      "Instalação técnica e testes",
+      "Suporte prioritário",
+      "Garantia e suporte",
+      "Análise em tempo real",
     ],
-    popular: false,
+    popular: true,
     message:
       "Estou interessado no Plano Empresarial e gostaria de mais informações.",
   },
