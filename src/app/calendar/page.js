@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
@@ -15,8 +14,12 @@ import {
 } from "./calendarPage.style";
 import ProtectedRoute from "@/routes/protectedRoute";
 
+import { useCalendarStore } from "@/stores/useCalendarStore";
+
 export default function Calendar() {
-  const [events, setEvents] = useState([]);
+  const events = useCalendarStore((state) => state.events);
+  const addEvent = useCalendarStore((state) => state.addEvent);
+  const removeEvent = useCalendarStore((state) => state.removeEvent);
 
   const handleDateClick = async (info) => {
     const { value: title } = await Swal.fire({
@@ -30,8 +33,25 @@ export default function Calendar() {
     });
 
     if (title) {
-      setEvents([...events, { title, date: info.dateStr }]);
+      addEvent({ title, date: info.dateStr });
       Swal.fire("Adicionado!", `Evento "${title}" foi criado.`, "success");
+    }
+  };
+
+  const handleEventClick = async (clickInfo) => {
+    const event = clickInfo.event;
+    const result = await Swal.fire({
+      title: "Remover evento?",
+      text: `Deseja remover o evento "${event.title}"?`,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Sim, remover",
+      cancelButtonText: "Cancelar",
+    });
+
+    if (result.isConfirmed) {
+      removeEvent({ title: event.title, date: event.startStr });
+      Swal.fire("Removido!", "Evento removido com sucesso.", "success");
     }
   };
 
@@ -52,6 +72,7 @@ export default function Calendar() {
           events={events}
           locale={ptLocale}
           dateClick={handleDateClick}
+          eventClick={handleEventClick}
         />
       </Container>
     </ProtectedRoute>
