@@ -10,7 +10,7 @@ import {
   UserInfo,
 } from "./dashboardPage.style";
 import { useAuth } from "@/context/AuthContext";
-import { Wind, Thermometer, Droplets } from "lucide-react";
+import { Wind, Thermometer, Droplets, Activity, Zap, Clock } from "lucide-react";
 import ProtectedRoute from "@/routes/protectedRoute";
 import { useEffect, useState } from "react";
 import { database, ref, onValue } from "@/lib/firebase";
@@ -30,6 +30,7 @@ export default function Dashboard() {
       if (snapshot.exists()) {
         const usuariosData = snapshot.val();
         const [id, user] = Object.entries(usuariosData)[0]; // Pegando o único usuário
+        console.log(user.dados);
         setDados(user.dados);
       } else {
         setDados(null);
@@ -74,6 +75,27 @@ export default function Dashboard() {
               classify="Ótimo"
               title="Volume de gás"
               value={dados.metano + " ppm"}
+            />
+
+            <CardBioInfo
+              icon={<Activity />}
+              classify="Ótimo"
+              title="Produção de metano"
+              value={dados.producao_metano + " m³/dia"}
+            />
+
+            <CardBioInfo
+              icon={<Zap />}
+              classify="Ótimo"
+              title="Eficiência energética"
+              value={dados.eficiencia_energetica + " %"}
+            />
+
+            <CardBioInfo
+              icon={<Clock />}
+              classify="Ótimo"
+              title="Tempo de ciclo"
+              value={dados.tempo_ciclo + " dias"}
             />
           </BlockBioInfo>
         ) : (

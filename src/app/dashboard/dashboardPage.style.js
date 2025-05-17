@@ -52,15 +52,16 @@ export const Tag = styled.span`
 `;
 
 export const BlockBioInfo = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   gap: 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 
   @media (max-width: 950px) {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
   }
 `;
 
