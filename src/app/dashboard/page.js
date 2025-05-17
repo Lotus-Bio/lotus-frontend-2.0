@@ -30,7 +30,6 @@ export default function Dashboard() {
       if (snapshot.exists()) {
         const usuariosData = snapshot.val();
         const [id, user] = Object.entries(usuariosData)[0]; // Pegando o único usuário
-        console.log(user.dados);
         setDados(user.dados);
       } else {
         setDados(null);
