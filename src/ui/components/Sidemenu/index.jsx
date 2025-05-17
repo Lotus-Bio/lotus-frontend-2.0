@@ -9,6 +9,7 @@ import {
   UserCircle,
   LogOut,
   Leaf,
+  BarChart2,
 } from "lucide-react";
 import {
   StyledMenu,
@@ -42,6 +43,7 @@ const Sidemenu = () => {
     "/calendar",
     "/notes",
     "/profile",
+    "/analytics",
   ].includes(pathname);
 
   useEffect(() => {
@@ -109,6 +111,10 @@ const Sidemenu = () => {
             <NavItem href="/profile" isActive={isActive("/profile")}>
               <UserCircle />
               {!isSidebarCollapsed && <span>Perfil</span>}
+            </NavItem>
+            <NavItem href="/analytics" isActive={isActive("/analytics")}>
+              <BarChart2 />
+              {!isSidebarCollapsed && <span>Analytics</span>}
             </NavItem>
           </Nav>
 
