@@ -22,6 +22,7 @@
     "recharts": "^2.15.3",
     "resend": "^4.2.0",
     "styled-components": "^6.1.15",
-    "sweetalert2": "^11.21.1"
+    "sweetalert2": "^11.21.1",
+    "zustand": "^5.0.4"
   }
 }

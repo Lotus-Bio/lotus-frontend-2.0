@@ -1,4 +1,6 @@
 "use client";
+import { useEffect } from "react";
+import { useNotesStore } from "@/stores/useNotesStore";
 import NoteItem from "@/ui/components/NoteItem";
 import {
   Container,
@@ -8,13 +10,17 @@ import {
   Tag,
   BlockNotes,
 } from "./notesPage.style";
-import ModalBlur from "@/ui/components/ModalBlur";
 import ProtectedRoute from "@/routes/protectedRoute";
 
 export default function Notes() {
+  const { notes, toggleNote, initializeNotes } = useNotesStore();
+
+  useEffect(() => {
+    initializeNotes();
+  }, []);
+
   return (
     <ProtectedRoute>
-      {/* <ModalBlur /> */}
       <Container>
         <Header>
           <div>
@@ -23,15 +29,19 @@ export default function Notes() {
               Passo a passo das tarefas a serem executadas
             </Description>
           </div>
-
           <Tag>Sistema ativo</Tag>
         </Header>
 
         <BlockNotes>
-          <NoteItem label="Instalação do biodigestor" />
-          <NoteItem label="Adicionar matéria orgânica" />
-          <NoteItem label="Monitorar a produção de biogás" />
-          <NoteItem label="Verificar a temperatura do biodigestor" />
+          {notes.map((note) => (
+            <NoteItem
+              key={note.id}
+              id={note.id}
+              label={note.label}
+              completed={note.completed}
+              onToggle={() => toggleNote(note.id)}
+            />
+          ))}
         </BlockNotes>
       </Container>
     </ProtectedRoute>
