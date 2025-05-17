@@ -40,9 +40,9 @@ const Sidemenu = () => {
 
   const shouldRenderMenu = [
     "/dashboard",
+    "/analytics",
     "/calendar",
     "/notes",
-    "/analytics",
     "/profile",
   ].includes(pathname);
 
@@ -100,6 +100,10 @@ const Sidemenu = () => {
               <LayoutDashboard />
               {!isSidebarCollapsed && <span>Dashboard</span>}
             </NavItem>
+            <NavItem href="/analytics" isActive={isActive("/analytics")}>
+              <BarChart2 />
+              {!isSidebarCollapsed && <span>Analytics</span>}
+            </NavItem>
             <NavItem href="/calendar" isActive={isActive("/calendar")}>
               <Calendar />
               {!isSidebarCollapsed && <span>Calendário</span>}
@@ -107,10 +111,6 @@ const Sidemenu = () => {
             <NavItem href="/notes" isActive={isActive("/notes")}>
               <StickyNote />
               {!isSidebarCollapsed && <span>Notas</span>}
-            </NavItem>
-            <NavItem href="/analytics" isActive={isActive("/analytics")}>
-              <BarChart2 />
-              {!isSidebarCollapsed && <span>Analytics</span>}
             </NavItem>
             <NavItem href="/profile" isActive={isActive("/profile")}>
               <UserCircle />
