@@ -42,8 +42,8 @@ const Sidemenu = () => {
     "/dashboard",
     "/calendar",
     "/notes",
-    "/profile",
     "/analytics",
+    "/profile",
   ].includes(pathname);
 
   useEffect(() => {
@@ -108,13 +108,13 @@ const Sidemenu = () => {
               <StickyNote />
               {!isSidebarCollapsed && <span>Notas</span>}
             </NavItem>
-            <NavItem href="/profile" isActive={isActive("/profile")}>
-              <UserCircle />
-              {!isSidebarCollapsed && <span>Perfil</span>}
-            </NavItem>
             <NavItem href="/analytics" isActive={isActive("/analytics")}>
               <BarChart2 />
               {!isSidebarCollapsed && <span>Analytics</span>}
+            </NavItem>
+            <NavItem href="/profile" isActive={isActive("/profile")}>
+              <UserCircle />
+              {!isSidebarCollapsed && <span>Perfil</span>}
             </NavItem>
           </Nav>
 
