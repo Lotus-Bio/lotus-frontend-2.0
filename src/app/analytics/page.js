@@ -33,103 +33,136 @@ export default function Analytcs() {
         <ContainerAnalytics>
           <BlockItemAnalytics>
             <TitleItemAnalystics>Produção de Biogás</TitleItemAnalystics>
-            <ResponsiveContainer>
-              <LineChart
-                width={500}
-                height={300}
-                data={dataLineChart}
-                margin={{
-                  top: 5,
-                  right: 30,
-                  left: 20,
-                  bottom: 5,
-                }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
+            <ResponsiveContainer width="100%" height={300}>
+              <LineChart data={dataLineChart}>
+                <CartesianGrid stroke="rgba(255, 255, 255, 0.1)" />
+                <XAxis dataKey="name" stroke="#E5E7EB" />
+                <YAxis stroke="#E5E7EB" />
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: "#1F2937",
+                    border: "none",
+                    borderRadius: "8px",
+                    color: "#F9FAFB",
+                  }}
+                />
                 <Legend />
-                <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-                <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+                <Line type="monotone" dataKey="pv" stroke="#6366F1" strokeWidth={2} dot={{ r: 4 }} />
+                <Line type="monotone" dataKey="uv" stroke="#34D399" strokeWidth={2} dot={{ r: 4 }} />
               </LineChart>
             </ResponsiveContainer>
           </BlockItemAnalytics>
 
           <BlockItemAnalytics>
             <TitleItemAnalystics>Eficiência por Ciclo</TitleItemAnalystics>
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart
-                width={500}
-                height={300}
-                data={dataBarChart}
-                margin={{
-                  top: 5,
-                  right: 30,
-                  left: 20,
-                  bottom: 5,
-                }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
+            <ResponsiveContainer width="100%" height={300}>
+              <BarChart data={dataBarChart}>
+                <CartesianGrid stroke="rgba(255, 255, 255, 0.1)" />
+                <XAxis dataKey="name" stroke="#E5E7EB" />
+                <YAxis stroke="#E5E7EB" />
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: "#1F2937",
+                    border: "none",
+                    borderRadius: "8px",
+                    color: "#F9FAFB",
+                  }}
+                />
                 <Legend />
-                <Bar dataKey="pv" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
-                <Bar dataKey="uv" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} />
+                <Bar dataKey="pv" fill="#6366F1" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="uv" fill="#34D399" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </BlockItemAnalytics>
 
           <BlockItemAnalytics>
             <TitleItemAnalystics>Distribuição de Recursos</TitleItemAnalystics>
-            <ResponsiveContainer width="100%" height="100%">
-              <PieChart width={400} height={400}>
+            <ResponsiveContainer width="100%" height={300}>
+              <PieChart>
                 <Pie
                   dataKey="value"
-                  isAnimationActive={false}
                   data={dataPieChart}
                   cx="50%"
                   cy="50%"
-                  outerRadius={80}
-                  fill="#8884d8"
+                  outerRadius={100}
+                  fill="#6366F1"
                   label
                 />
-                <Tooltip />
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: "#1F2937",
+                    border: "none",
+                    borderRadius: "8px",
+                    color: "#F9FAFB",
+                  }}
+                />
               </PieChart>
             </ResponsiveContainer>
           </BlockItemAnalytics>
 
           <BlockItemAnalytics>
             <TitleItemAnalystics>Métricas principais</TitleItemAnalystics>
-            <MetricsItem>
-              <Wind size={40} color="#4CAF50" />
-              <div>
-                <h3>Vento</h3>
-                <p>15 km/h</p>
-              </div>
-            </MetricsItem>
-            <MetricsItem>
-              <Thermometer size={40} color="#FF9800" />
-              <div>
-                <h3>Temperatura</h3>
-                <p>25 °C</p>
-              </div>
-            </MetricsItem>
-            <MetricsItem>
-              <Droplets size={40} color="#2196F3" />
-              <div>
-                <h3>Umidade</h3>
-                <p>60%</p>
-              </div>
-            </MetricsItem>
-            <MetricsItem>
-              <Activity size={40} color="#9C27B0" />
-              <div>
-                <h3>Atividade</h3>
-                <p>Alta</p>
-              </div>
-            </MetricsItem>
+            <div className="container-metrics-item">
+              <MetricsItem>
+                <div className="icon">
+                  <Wind size={24} color="#82ca9d" /> 
+                </div>
+                <div>
+                  <h3>Vento</h3>
+                  <p>15 km/h</p>
+                </div>
+              </MetricsItem>
+
+              <MetricsItem>
+                <div className="icon">
+                  <Thermometer size={24} color="#8884d8" />
+                </div>
+                <div>
+                  <h3>Temperatura</h3>
+                  <p>25 °C</p>
+                </div>
+              </MetricsItem>
+
+              <MetricsItem>
+                <div className="icon">
+                  <Droplets size={24} color="#82ca9d" />
+                </div>
+                <div>
+                  <h3>Umidade</h3>
+                  <p>60%</p>
+                </div>
+              </MetricsItem>
+
+              <MetricsItem>
+                <div className="icon">
+                  <Activity size={24} color="#8884d8" />
+                </div>
+                <div>
+                  <h3>Atividade</h3>
+                  <p>Alta</p>
+                </div>
+              </MetricsItem>
+
+              <MetricsItem>
+                <div className="icon">
+                  <Zap size={24} color="#FFB74D" /> 
+                </div>
+                <div>
+                  <h3>Energia</h3>
+                  <p>120 kWh</p>
+                </div>
+              </MetricsItem>
+
+              <MetricsItem>
+                <div className="icon">
+                  <Clock size={24} color="#BA68C8" /> 
+                </div>
+                <div>
+                  <h3>Tempo Operação</h3>
+                  <p>18h/dia</p>
+                </div>
+              </MetricsItem>
+            </div>
           </BlockItemAnalytics>
         </ContainerAnalytics>
       </Container>

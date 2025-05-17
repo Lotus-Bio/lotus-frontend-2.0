@@ -53,6 +53,7 @@ export const Tag = styled.span`
 
 export const ContainerAnalytics = styled.div`
   height: 100%;
+  padding-bottom: 2rem;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -62,12 +63,11 @@ export const ContainerAnalytics = styled.div`
   @media (max-width: 950px) {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: auto;
   }
 `;
 
 export const BlockItemAnalytics = styled.div`
-  max-height: 450px;
   height: 100%;
   display: flex;
   gap: 1rem;
@@ -83,29 +83,62 @@ export const BlockItemAnalytics = styled.div`
     transform: scale(1.02);
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
   }
+
+  .container-metrics-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;  
+
+    @media (max-width: 950px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+  }
 `;
 
 export const MetricsItem = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 1rem;
+  background: ${({ theme }) => theme.colors.white};
   border-radius: 1rem;
-  border: 1px solid ${({ theme }) => theme.colors.grey};
-  padding: .5rem;
+  padding: 1rem;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 10px ${({ theme }) => theme.colors.shadow};
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 20px ${({ theme }) => theme.colors.shadow};
+  }
+
+  .icon {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.75rem;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   h3 {
-    color: ${({ theme }) => theme.colors.darkGrey};
-    font-weight: 600;
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+    color: ${({ theme }) => theme.colors.grey};
+    font-weight: 500;
+    font-size: 1rem;
+    margin: 0;
   }
 
   p {
-    color: ${({ theme }) => theme.colors.grey};
+    color: ${({ theme }) => theme.colors.lightGrey};
     font-size: 0.875rem;
-    line-height: 1.25rem;
+    margin: 0;
+  }
+
+  @media (max-width: 950px) {
+   flex-direction: column;
+   text-align: center;
   }
 `;
+
 
 export const TitleItemAnalystics = styled.h2`
   text-align: center;
