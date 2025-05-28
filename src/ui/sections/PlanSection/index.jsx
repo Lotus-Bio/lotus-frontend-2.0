@@ -10,7 +10,7 @@ const PlanSection = ({ setMessage }) => {
     <StyledPlanSection id="plan">
       <div className="container">
         <TitleSection>Escolha seu plano</TitleSection>
-        <SubtitleSection>
+        <SubtitleSection dark>
           Selecione a solução perfeita para suas necessidades
         </SubtitleSection>
       </div>

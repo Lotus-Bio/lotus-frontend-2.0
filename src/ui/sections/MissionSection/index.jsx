@@ -10,7 +10,7 @@ const MissionSection = () => {
     <StyledMissionSection id="mission">
       <div className="container">
         <TitleSection>Revolucionando a gestão de resíduos</TitleSection>
-        <SubtitleSection>
+        <SubtitleSection dark>
           Manter um biodigestor eficiente pode ser um desafio. Dados
           inconsistentes e falta de monitoramento podem levar a problemas como
           baixa produção de biogás e odores indesejados. É por isso que criamos
