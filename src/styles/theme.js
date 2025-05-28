@@ -10,7 +10,7 @@ const theme = {
     grey: "rgb(75, 85, 99)",
     lightGrey: "rgb(209, 213, 219)",
     darkGrey: "rgb(55, 65, 81)",
-    darkDarkGrey: "rgb(17, 24, 39)",
+    darkDarkGrey: "rgb(8, 13, 25)",
     lightGreen: "rgb(92, 156, 84)",
     darkGreen: "rgb(44, 92, 36)",
     lightBackgroundGreen: "rgb(240, 253, 244)",
