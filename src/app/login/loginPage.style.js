@@ -12,7 +12,7 @@ export const BackPage = styled(Link)`
     align-items: center;
     gap: 1rem;
 
-    color: ${({ theme }) => theme.colors.lightGreen};
+    color: ${({ theme }) => theme.colors.white};
   }
 
   p:hover {
@@ -23,7 +23,7 @@ export const BackPage = styled(Link)`
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  background: ${({ theme }) => theme.colors.white};
+  background: ${({ theme }) => theme.colors.darkDarkGrey};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,20 +31,25 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
+  background: ${({ theme }) => theme.colors.backgroundDark};
   max-width: 400px;
   width: 100%;
   padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 15px 20px ${({ theme }) => theme.colors.shadow},
-    0 6px 12px ${({ theme }) => theme.colors.shadow};
 
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 2rem;
 
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
   h2 {
-    color: ${({ theme }) => theme.colors.darkGreen};
+    color: ${({ theme }) => theme.colors.white};
     font-size: 1.5rem;
     font-weight: 700;
     line-height: 2;
@@ -54,6 +59,10 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+  }
+
+  p {
+    color: ${({ theme }) => theme.colors.white};
   }
 `;
 
