@@ -14,6 +14,12 @@ export const StyledUserInfo = styled.div`
   margin-top: 2rem;
   width: fit-content;
 
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
   h3 {
     font-weight: bold;
     color: ${({ theme }) => theme.colors.white};
