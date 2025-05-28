@@ -11,7 +11,7 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.div`
-  background: ${({ theme }) => theme.colors.white};
+  background: ${({ theme }) => theme.colors.darkActive};
   border-radius: 1rem;
   padding: 1.5rem;
   margin-bottom: 2rem;
@@ -29,21 +29,21 @@ export const Header = styled.div`
 `;
 
 export const Title = styled.h2`
-  color: ${({ theme }) => theme.colors.darkGrey};
+  color: ${({ theme }) => theme.colors.white};
   font-weight: 600;
   font-size: 1.5rem;
   line-height: 2rem;
 `;
 
 export const Description = styled.p`
-  color: ${({ theme }) => theme.colors.grey};
+  color: ${({ theme }) => theme.colors.lightGrey};
   font-size: 0.875rem;
   line-height: 1%.25;
 `;
 
 export const Tag = styled.span`
-  background: ${({ theme }) => theme.colors.lightBackgroundGreen};
-  color: ${({ theme }) => theme.colors.lightGreen};
+  background: ${({ theme }) => theme.colors.backgroundDark};
+  color: ${({ theme }) => theme.colors.lightGrey};
   font-weight: bold;
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -73,7 +73,7 @@ export const BlockItemAnalytics = styled.div`
   gap: 1rem;
   flex-direction: column;
 
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.backgroundDark};
   border-radius: 1rem;
   padding: 1.5rem;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
@@ -87,7 +87,7 @@ export const BlockItemAnalytics = styled.div`
   .container-metrics-item {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;  
+    gap: 1rem;
 
     @media (max-width: 950px) {
       grid-template-columns: 1fr;
@@ -100,7 +100,7 @@ export const MetricsItem = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-  background: ${({ theme }) => theme.colors.white};
+  background: ${({ theme }) => theme.colors.darkActive};
   border-radius: 1rem;
   padding: 1rem;
   transition: all 0.3s ease-in-out;
@@ -121,7 +121,7 @@ export const MetricsItem = styled.div`
   }
 
   h3 {
-    color: ${({ theme }) => theme.colors.grey};
+    color: ${({ theme }) => theme.colors.lightGrey};
     font-weight: 500;
     font-size: 1rem;
     margin: 0;
@@ -134,16 +134,15 @@ export const MetricsItem = styled.div`
   }
 
   @media (max-width: 950px) {
-   flex-direction: column;
-   text-align: center;
+    flex-direction: column;
+    text-align: center;
   }
 `;
-
 
 export const TitleItemAnalystics = styled.h2`
   text-align: center;
   margin-bottom: 1rem;
-  color: ${({ theme }) => theme.colors.darkGrey};
+  color: ${({ theme }) => theme.colors.white};
   font-weight: 600;
   font-size: 1.5rem;
   line-height: 2rem;

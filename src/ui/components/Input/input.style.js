@@ -8,7 +8,7 @@ const baseInputStyles = css`
   outline: none;
   transition: all 0.3s ease;
   width: 100%;
-  color: rgb(0, 0, 0);
+  color: rgb(209, 213, 219);
 
   &::placeholder {
     color: ${({ theme }) => theme.colors.lightGrey};
@@ -26,7 +26,7 @@ export const StyledTextarea = styled.textarea`
 `;
 
 export const Label = styled.label`
-  color: ${({ theme }) => theme.colors.darkGrey};
+  color: ${({ theme }) => theme.colors.lightGrey};
   font-size: 0.875rem;
   line-height: 1.25rem;
   margin-bottom: 0.25rem;

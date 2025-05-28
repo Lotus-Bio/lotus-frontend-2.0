@@ -5,7 +5,8 @@ export default function NoteItem({ id, label, completed, onToggle }) {
       style={{
         display: "flex",
         justifyContent: "space-between",
-        background: "#f0f0f0",
+        background: "rgb(28, 35, 51)",
+        color: "rgb(255, 255, 255)",
         borderRadius: "0.5rem",
         padding: "1rem",
         cursor: "pointer",

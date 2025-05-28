@@ -16,8 +16,7 @@ export const StyledMenu = styled.div`
 
 export const Sidebar = styled.aside`
   width: ${({ $isCollapsed }) => ($isCollapsed ? "5rem" : "16rem")};
-  background-color: ${({ theme }) => theme.colors.white};
-  border-right: 1px solid ${({ theme }) => theme.colors.lightGrey};
+  background-color: ${({ theme }) => theme.colors.darkSideMenu};
   padding: 1rem;
   display: flex;
   align-items: ${({ $isCollapsed }) => ($isCollapsed ? "center" : "start")};
@@ -47,7 +46,6 @@ export const Logo = styled.div`
   }
 `;
 export const BlockIcon = styled.div`
-  background: ${({ theme }) => theme.colors.lightBackgroundGreen};
   color: ${({ theme }) => theme.colors.lightGreen};
 
   display: flex;
@@ -78,7 +76,7 @@ export const NavItemStyled = styled.div`
   align-items: center;
   gap: 1rem;
   text-decoration: none;
-  color: ${({ theme }) => theme.colors.darkGrey};
+  color: ${({ theme }) => theme.colors.white};
   font-size: 1rem;
   font-weight: 500;
 
@@ -107,7 +105,7 @@ export const BottomSection = styled.div`
 
 export const ButtonToggle = styled.button`
   background: none;
-  color: ${({ theme }) => theme.colors.darkGrey};
+  color: ${({ theme }) => theme.colors.white};
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -141,7 +139,7 @@ export const Logout = styled.button`
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
-  color: ${({ theme }) => theme.colors.darkGrey};
+  color: ${({ theme }) => theme.colors.white};
   padding: 0.75rem;
   font-size: 0.875rem;
 

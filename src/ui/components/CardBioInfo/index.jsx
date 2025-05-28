@@ -11,12 +11,13 @@ const CardBioInfo = ({ icon, classify, title, value }) => {
   return (
     <StyledCardBioInfo>
       <BlockAlign>
-        <Icon>{icon}</Icon>
+        <BlockAlign>
+          <Icon>{icon}</Icon>
+          <Title>{title}</Title>
+        </BlockAlign>
         <Tag>{classify}</Tag>
       </BlockAlign>
-
       <div>
-        <Title>{title}</Title>
         <Value>{value}</Value>
       </div>
     </StyledCardBioInfo>

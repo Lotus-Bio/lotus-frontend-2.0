@@ -10,12 +10,32 @@ import {
   MetricsItem,
   TitleItemAnalystics,
 } from "./analyticsPage.style";
-import { Wind, Thermometer, Droplets, Activity, Zap, Clock } from "lucide-react";
+import {
+  Wind,
+  Thermometer,
+  Droplets,
+  Activity,
+  Zap,
+  Clock,
+} from "lucide-react";
 import ProtectedRoute from "@/routes/protectedRoute";
-import { PieChart, Pie, BarChart, Bar, Rectangle, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import {
+  PieChart,
+  Pie,
+  BarChart,
+  Bar,
+  Rectangle,
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 
 import { dataLineChart, dataBarChart, dataPieChart } from "@/data/analytics";
-
 
 export default function Analytcs() {
   return (
@@ -47,8 +67,20 @@ export default function Analytcs() {
                   }}
                 />
                 <Legend />
-                <Line type="monotone" dataKey="pv" stroke="#6366F1" strokeWidth={2} dot={{ r: 4 }} />
-                <Line type="monotone" dataKey="uv" stroke="#34D399" strokeWidth={2} dot={{ r: 4 }} />
+                <Line
+                  type="monotone"
+                  dataKey="pv"
+                  stroke="#6366F1"
+                  strokeWidth={2}
+                  dot={{ r: 4 }}
+                />
+                <Line
+                  type="monotone"
+                  dataKey="uv"
+                  stroke="#34D399"
+                  strokeWidth={2}
+                  dot={{ r: 4 }}
+                />
               </LineChart>
             </ResponsiveContainer>
           </BlockItemAnalytics>
@@ -105,7 +137,7 @@ export default function Analytcs() {
             <div className="container-metrics-item">
               <MetricsItem>
                 <div className="icon">
-                  <Wind size={24} color="#82ca9d" /> 
+                  <Wind size={24} color="#82ca9d" />
                 </div>
                 <div>
                   <h3>Vento</h3>
@@ -145,7 +177,7 @@ export default function Analytcs() {
 
               <MetricsItem>
                 <div className="icon">
-                  <Zap size={24} color="#FFB74D" /> 
+                  <Zap size={24} color="#FFB74D" />
                 </div>
                 <div>
                   <h3>Energia</h3>
@@ -155,7 +187,7 @@ export default function Analytcs() {
 
               <MetricsItem>
                 <div className="icon">
-                  <Clock size={24} color="#BA68C8" /> 
+                  <Clock size={24} color="#BA68C8" />
                 </div>
                 <div>
                   <h3>Tempo Operação</h3>

@@ -3,6 +3,9 @@
 const theme = {
   colors: {
     white: "rgb(255, 255, 255)",
+    backgroundDark: "rgb(28, 35, 51)",
+    darkSideMenu: "rgb(5, 8, 16)",
+    darkActive: "rgb(19, 28, 51)",
     red: "#ef4444",
     grey: "rgb(75, 85, 99)",
     lightGrey: "rgb(209, 213, 219)",
