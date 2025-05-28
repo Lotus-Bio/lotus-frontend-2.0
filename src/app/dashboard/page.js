@@ -1,5 +1,6 @@
 "use client";
 import CardBioInfo from "@/ui/components/CardBioInfo";
+import UserInfo from "@/ui/components/UserInfo";
 import {
   Container,
   Header,
@@ -7,7 +8,6 @@ import {
   Description,
   Tag,
   BlockBioInfo,
-  UserInfo,
 } from "./dashboardPage.style";
 import { useAuth } from "@/context/AuthContext";
 import {
@@ -168,14 +168,7 @@ export default function Dashboard() {
           <Loading loading={loading} />
         )}
 
-        <UserInfo>
-          {user && (
-            <>
-              <p>{user.displayName}</p>
-              <p>{user.email}</p>
-            </>
-          )}
-        </UserInfo>
+        {user && <UserInfo name={user.displayName} email={user.email} />}
       </Container>
     </ProtectedRoute>
   );
