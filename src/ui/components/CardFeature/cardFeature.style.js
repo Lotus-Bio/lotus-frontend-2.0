@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledCardFeature = styled.div`
+  background: ${({ theme }) => theme.colors.backgroundDark};
   padding: 2rem;
   border-radius: 0.75rem;
 
@@ -15,7 +16,8 @@ export const StyledCardFeature = styled.div`
   transition-duration: 150ms;
 
   &:hover {
-    box-shadow: 0 15px 20px ${({ theme }) => theme.colors.shadow},
+    box-shadow:
+      0 15px 20px ${({ theme }) => theme.colors.shadow},
       0 6px 12px ${({ theme }) => theme.colors.shadow};
   }
 `;
@@ -45,7 +47,7 @@ export const Title = styled.h4`
 `;
 
 export const Description = styled.p`
-  color: ${({ theme }) => theme.colors.grey};
+  color: ${({ theme }) => theme.colors.lightGrey};
   font-size: 1rem;
   line-height: inherit;
 `;

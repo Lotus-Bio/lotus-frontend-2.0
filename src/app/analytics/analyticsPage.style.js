@@ -104,11 +104,9 @@ export const MetricsItem = styled.div`
   border-radius: 1rem;
   padding: 1rem;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 2px 10px ${({ theme }) => theme.colors.shadow};
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 4px 20px ${({ theme }) => theme.colors.shadow};
   }
 
   .icon {

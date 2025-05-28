@@ -24,7 +24,7 @@ export const Icon = styled.div`
 `;
 
 export const Title = styled.h4`
-  color: ${({ theme }) => theme.colors.darkGreen};
+  color: ${({ theme }) => theme.colors.white};
   font-weight: 700;
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -32,6 +32,6 @@ export const Title = styled.h4`
 `;
 
 export const Info = styled.p`
-  color: ${({ theme }) => theme.colors.grey};
+  color: ${({ theme }) => theme.colors.lightGrey};
   font-size: 1rem;
 `;

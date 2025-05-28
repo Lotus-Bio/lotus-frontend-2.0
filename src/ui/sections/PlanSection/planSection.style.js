@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Container from "@/ui/components/Container";
 
 export const StyledPlanSection = styled.section`
+  background: ${({ theme }) => theme.colors.white};
   padding: 6rem 0;
 `;
 

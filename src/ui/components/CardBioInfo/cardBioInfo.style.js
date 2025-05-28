@@ -8,10 +8,10 @@ export const StyledCardBioInfo = styled.div`
 
   width: 100%;
 
+  transition: all 0.3s ease-in-out;
+
   &:hover {
-    box-shadow:
-      0 10px 15px -3px ${({ theme }) => theme.colors.shadow},
-      0 4px 6px -4px ${({ theme }) => theme.colors.shadow};
+    transform: scale(1.02);
   }
 `;
 
@@ -20,7 +20,7 @@ export const BlockAlign = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 `;
 
 export const Icon = styled.div`
