@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Button from "../Button";
 import Logo from "../Logo";
 import Link from "next/link";
+import Image from "next/image";
 import {
   StyledMenu,
   ExtendedContainer,
@@ -45,7 +46,12 @@ const Menu = () => {
     <StyledMenu $scrolled={scrolled}>
       <ExtendedContainer>
         <Link href="#header">
-          <Logo light />
+          <Image
+            src="/images/logo.svg"
+            alt="Logo Lotus"
+            width={80}
+            height={10}
+          />
         </Link>
 
         <BurgerIcon onClick={toggleMenu}>
