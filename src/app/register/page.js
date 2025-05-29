@@ -12,6 +12,7 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import Loading from "@/ui/components/Loading";
 import PublicRoute from "@/routes/publicRoutes";
 import { ArrowLeft } from "lucide-react";
+import Image from "next/image";
 
 export default function Register() {
   const router = useRouter();
@@ -96,7 +97,12 @@ export default function Register() {
         <Loading loading={loading} />
 
         <Content>
-          <Logo large />
+          <Image
+            src="/images/logo.svg"
+            alt="Logo Lotus"
+            width={150}
+            height={40}
+          />
 
           <h2>Cadastrar</h2>
 
