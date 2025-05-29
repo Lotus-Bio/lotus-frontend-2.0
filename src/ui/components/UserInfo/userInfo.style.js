@@ -43,4 +43,10 @@ export const StyledUserInfo = styled.div`
     height: 50px;
     border-radius: 25px;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
 `;
