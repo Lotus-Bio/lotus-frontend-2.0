@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import {
   LayoutDashboard,
   Calendar,
@@ -89,10 +90,21 @@ const Sidemenu = () => {
       <StyledMenu>
         <Sidebar $isCollapsed={isSidebarCollapsed}>
           <Logo>
-            <BlockIcon>
-              <Leaf />
-            </BlockIcon>
-            {!isSidebarCollapsed && <span>Lotus</span>}
+            {isSidebarCollapsed ? (
+              <Image
+                src="/images/icon3.svg"
+                alt="Logo Lotus"
+                width={24}
+                height={24}
+              />
+            ) : (
+              <Image
+                src="/images/logo.svg"
+                alt="Logo Lotus"
+                width={100}
+                height={40}
+              />
+            )}
           </Logo>
 
           <Nav>
