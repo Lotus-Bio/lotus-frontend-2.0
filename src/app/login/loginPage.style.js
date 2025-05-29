@@ -40,7 +40,7 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 
   transition: all 0.3s ease-in-out;
 
