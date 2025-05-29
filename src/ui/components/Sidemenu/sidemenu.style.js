@@ -37,6 +37,7 @@ export const Logo = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  margin-top: 1.5rem;
 
   span {
     color: ${({ theme }) => theme.colors.darkGrey};
