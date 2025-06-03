@@ -6,17 +6,15 @@ import Image from "next/image";
 import {
   LayoutDashboard,
   Calendar,
-  StickyNote,
   UserCircle,
   LogOut,
-  Leaf,
   BarChart2,
+  Bell,
 } from "lucide-react";
 import {
   StyledMenu,
   Sidebar,
   Logo,
-  BlockIcon,
   Nav,
   NavItem,
   BottomSection,
@@ -43,7 +41,7 @@ const Sidemenu = () => {
     "/dashboard",
     "/analytics",
     "/calendar",
-    "/notes",
+    "/alert",
     "/profile",
   ].includes(pathname);
 
@@ -120,9 +118,9 @@ const Sidemenu = () => {
               <Calendar />
               {!isSidebarCollapsed && <span>Calendário</span>}
             </NavItem>
-            <NavItem href="/notes" isActive={isActive("/notes")}>
-              <StickyNote />
-              {!isSidebarCollapsed && <span>Notas</span>}
+            <NavItem href="/alert" isActive={isActive("/alert")}>
+              <Bell />
+              {!isSidebarCollapsed && <span>Alertas</span>}
             </NavItem>
             <NavItem href="/profile" isActive={isActive("/profile")}>
               <UserCircle />

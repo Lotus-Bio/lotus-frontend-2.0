@@ -50,9 +50,3 @@ export const Tag = styled.span`
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
 `;
-
-export const BlockNotes = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-`;
