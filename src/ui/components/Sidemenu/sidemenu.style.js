@@ -65,7 +65,7 @@ export const Nav = styled.nav`
 `;
 
 export const NavItem = ({ href, isActive, children }) => (
-  <Link href={href}>
+  <Link href={href} css={{ position: "relative" }}>
     <NavItemStyled className={isActive ? "active" : ""}>
       {children}
     </NavItemStyled>

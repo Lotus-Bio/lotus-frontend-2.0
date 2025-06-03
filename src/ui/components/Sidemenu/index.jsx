@@ -28,12 +28,15 @@ import { auth } from "@/lib/firebase";
 import { signOut } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import { useAlertStore } from "@/stores/useAlertStore";
 
 const Sidemenu = () => {
   const router = useRouter();
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
+  const { alertas } = useAlertStore();
+
 
   const isActive = (path) => pathname === path;
 
@@ -120,6 +123,17 @@ const Sidemenu = () => {
             </NavItem>
             <NavItem href="/alert" isActive={isActive("/alert")}>
               <Bell />
+              {alertas.length > 0 && (
+                <span css={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "0.5rem",
+                  height: "0.5rem",
+                  backgroundColor: "#ef4444",
+                  borderRadius: "9999px",
+                }} />
+              )}
               {!isSidebarCollapsed && <span>Alertas</span>}
             </NavItem>
             <NavItem href="/profile" isActive={isActive("/profile")}>
