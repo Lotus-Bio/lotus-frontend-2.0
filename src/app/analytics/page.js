@@ -69,14 +69,14 @@ export default function Analytcs() {
                 <Legend />
                 <Line
                   type="monotone"
-                  dataKey="pv"
+                  dataKey="producaoEstimada"
                   stroke="#6366F1"
                   strokeWidth={2}
                   dot={{ r: 4 }}
                 />
                 <Line
                   type="monotone"
-                  dataKey="uv"
+                  dataKey="producaoReal"
                   stroke="#34D399"
                   strokeWidth={2}
                   dot={{ r: 4 }}
@@ -101,8 +101,8 @@ export default function Analytcs() {
                   }}
                 />
                 <Legend />
-                <Bar dataKey="pv" fill="#6366F1" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="uv" fill="#34D399" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="eficienciaPlanejada" fill="#6366F1" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="eficienciaReal" fill="#34D399" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </BlockItemAnalytics>
