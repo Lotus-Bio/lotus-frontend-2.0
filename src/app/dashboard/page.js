@@ -22,29 +22,33 @@ import ProtectedRoute from "@/routes/protectedRoute";
 import { useEffect, useState } from "react";
 import { database, ref, onValue } from "@/lib/firebase";
 import Loading from "@/ui/components/Loading";
+import { gerarAlertas } from "@/lib/alertUtils";
+import { useAlertStore } from "@/stores/useAlertStore";
 
 export default function Dashboard() {
   const [dados, setDados] = useState(null);
   const [loading, setLoading] = useState(false);
   const { user } = useAuth();
+  const { addAlertas } = useAlertStore();
 
   useEffect(() => {
     setLoading(true);
-    const usuarioRef = ref(database, "usuarios"); // Caminho no Realtime Database
+    const usuarioRef = ref(database, "usuarios");
 
-    // Escutando mudanças em tempo real
     const unsubscribe = onValue(usuarioRef, (snapshot) => {
       if (snapshot.exists()) {
         const usuariosData = snapshot.val();
-        const [id, user] = Object.entries(usuariosData)[0]; // Pegando o único usuário
-        setDados(user.dados);
+        const [id, user] = Object.entries(usuariosData)[0];
+        const dadosSensor = user.dados;
+        setDados(dadosSensor);
+        const novosAlertas = gerarAlertas(dadosSensor);
+        addAlertas(novosAlertas);
       } else {
         setDados(null);
       }
+      setLoading(false);
     });
 
-    setLoading(false);
-    // Cleanup: remove listener ao desmontar o componente
     return () => unsubscribe();
   }, []);
 
