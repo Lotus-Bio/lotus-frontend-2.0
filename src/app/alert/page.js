@@ -9,7 +9,10 @@ import {
   Tag,
   Content,
 } from "./alertPage.style";
+import { useAlertStore } from "@/stores/useAlertStore";
+
 export default function Alert() {
+  const { alertas } = useAlertStore();
 
   return (
     <ProtectedRoute>
@@ -24,35 +27,21 @@ export default function Alert() {
         </Header>
 
         <Content>
-          <AlertCard
-            type="error"
-            title="Sistema em funcionamento"
-            description="Todos os parâmetros estão dentro dos limites ideais."
-            time={new Date().toLocaleTimeString("pt-BR", {
-              hour: "2-digit",
-              minute: "2-digit",
-            })}
-          />
-
-          <AlertCard
-            type="warning"
-            title="Sistema em funcionamento"
-            description="Todos os parâmetros estão dentro dos limites ideais."
-            time={new Date().toLocaleTimeString("pt-BR", {
-              hour: "2-digit",
-              minute: "2-digit",
-            })}
-          />
-
-          <AlertCard
-            type="success"
-            title="Sistema em funcionamento"
-            description="Todos os parâmetros estão dentro dos limites ideais."
-            time={new Date().toLocaleTimeString("pt-BR", {
-              hour: "2-digit",
-              minute: "2-digit",
-            })}
-          />
+          {[...alertas]
+            .sort((a, b) => b.time - a.time)
+            .map((alerta) => (
+              <AlertCard
+                key={alerta.id}
+                id={alerta.id}
+                type={alerta.type}
+                title={alerta.title}
+                description={alerta.description}
+                time={new Date(alerta.time).toLocaleTimeString("pt-BR", {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}
+              />
+            ))}
         </Content>
       </Container>
     </ProtectedRoute>
