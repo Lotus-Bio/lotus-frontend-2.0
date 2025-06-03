@@ -22,7 +22,6 @@ export const StyledAlertCard = styled.div`
   max-width: 600px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  cursor: pointer;
 
   &:hover {
     transform: translateY(-2px);
@@ -63,5 +62,13 @@ export const StyledAlertCard = styled.div`
     display: flex;
     align-items: center;
     gap: 0.25rem;
+  }
+
+  button {
+    margin-left: auto;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 `;

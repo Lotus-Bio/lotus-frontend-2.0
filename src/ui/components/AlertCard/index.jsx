@@ -3,10 +3,14 @@ import {
   CircleAlert,
   CircleCheckBig,
   Clock9,
+  X
 } from "lucide-react";
 import { StyledAlertCard } from "./alertCard.style";
+import { useAlertStore } from "@/stores/useAlertStore";
 
-const AlertCard = ({ type, title, description, time }) => {
+
+const AlertCard = ({ id, type, title, description, time }) => {
+  const { removerAlerta } = useAlertStore();
   let Icon;
 
   if (type === "error") {
@@ -28,6 +32,10 @@ const AlertCard = ({ type, title, description, time }) => {
         <p>{description}</p>
         <span><Clock9 size={14} />{time}</span>
       </div>
+
+      <button onClick={() => removerAlerta(id)}>
+        <X />
+      </button>
     </StyledAlertCard>
   );
 };
