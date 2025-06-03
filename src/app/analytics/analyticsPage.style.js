@@ -122,7 +122,7 @@ export const MetricsItem = styled.div`
     color: ${({ theme }) => theme.colors.lightGrey};
     font-weight: 500;
     font-size: 1rem;
-    margin: 0;
+    margin-bottom: .5rem;
   }
 
   p {

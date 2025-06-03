@@ -11,7 +11,7 @@ import {
   TitleItemAnalystics,
 } from "./analyticsPage.style";
 import {
-  Wind,
+  BatteryFull,
   Thermometer,
   Droplets,
   Activity,
@@ -137,11 +137,11 @@ export default function Analytcs() {
             <div className="container-metrics-item">
               <MetricsItem>
                 <div className="icon">
-                  <Wind size={24} color="#82ca9d" />
+                  <BatteryFull size={24} color="#00ACC1" />
                 </div>
                 <div>
-                  <h3>Vento</h3>
-                  <p>15 km/h</p>
+                  <h3>Capacidade</h3>
+                  <p>73%</p>
                 </div>
               </MetricsItem>
 
