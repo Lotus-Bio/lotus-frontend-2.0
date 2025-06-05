@@ -24,7 +24,7 @@
 Primeiro, clone o repositório para a sua máquina local:
 
 ```bash
-git clone https://github.com/nettocaue/lotus-frontend.git
+git clone https://github.com/Lotus-Bio/lotus-frontend-2.0.git
 cd lotus-frontend
 ```
 
